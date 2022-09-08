@@ -33,6 +33,19 @@
 |向右箭頭   頁碼／輪播圖可用
     import { HiChevronRight} from "react-icons/hi";
 
+|設定齒輪
+    import { AiOutlineSetting } from 'react-icons/ai';
+|我的訂單
+    import { FiFile } from 'react-icons/fi';
+|我的票券
+    import { TbTicket } from 'react-icons/tb';
+|訊息
+    import { RiMessage3Line } from 'react-icons/ri';
+|會員（有兩個仁）
+    import { BsPeople } from 'react-icons/bs';
+
+
+
 |叉叉
 
     <span className="delete-chip">✕</span>
