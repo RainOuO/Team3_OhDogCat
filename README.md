@@ -41,7 +41,7 @@
     import { TbTicket } from 'react-icons/tb';
 |訊息
     import { RiMessage3Line } from 'react-icons/ri';
-|會員（有兩個仁）
+|會員（有兩個人）
     import { BsPeople } from 'react-icons/bs';
 
 
