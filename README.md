@@ -36,6 +36,8 @@
 |叉叉
 
     <span className="delete-chip">✕</span>
+    
+    <!-- CSS設定 -->
     .delete-chip{
     color: #999;
     cursor: pointer;
