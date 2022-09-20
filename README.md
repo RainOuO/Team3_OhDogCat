@@ -18,8 +18,13 @@
 
 |放大鏡
     import { AiOutlineSearch } from 'react-icons/ai';
-|空心愛心
-    import {IoHeartOutline } from "react-icons/io5";
+|收藏愛心
+    import { FaHeart } from 'react-icons/fa';
+  svg {
+    color: #aaa;
+    width: 1.3rem;
+    height: 1.3rem;
+  }
 |狗掌
     import { FaPaw } from "react-icons/fa";
 |大火
