@@ -45,7 +45,6 @@ export default function PostLocateArticleForMobile({ post }) {
               <>
                 <div className="my-2 post_dayCount">Day {data[0].days}</div>
                 {data.map((data, i) => {
-
                   return (
                     <>
                       <li

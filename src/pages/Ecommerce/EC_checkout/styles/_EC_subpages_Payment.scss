@@ -137,7 +137,7 @@
 
         div {
           font-size: 16px;
-          width: 140px;
+          // width: 140px;
         }
 
         .title {
@@ -206,7 +206,7 @@
       margin-bottom: 20px;
 
       .iconVisa {
-        background-image: url(../../../../images/visa.png);
+        background-image: url(../../../../images/visa.webp);
         background-size: contain;
         background-repeat: no-repeat;
         width: 50px;
@@ -390,6 +390,10 @@
               font-size: 14px;
             }
             .subTotal {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              margin: 0%;
               p {
                 font-size: 14px;
               }

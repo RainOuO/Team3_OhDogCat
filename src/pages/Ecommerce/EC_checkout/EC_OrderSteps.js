@@ -82,12 +82,12 @@ function OrderSteps() {
         `${API_URL}/cart/showcart?productId=${productId}`
       );
       // setProductData(result.data);
-      console.log('here', result.data[0]);
+      // console.log('------------------here---------------------', result.data[0]);
       setCartProductData(result.data[0]);
     };
     fetchProductData();
   }, []);
-  console.log('cartData', cartProductData);
+  console.log('------------------here---------------------', cartProductData);
 
   return (
     <>

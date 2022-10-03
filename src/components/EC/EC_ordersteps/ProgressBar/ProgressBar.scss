@@ -1,63 +1,67 @@
 .ProgressBar {
-
-.container {
-  margin-top: 150px;
-  width: 100%;
-}
-
-.progressbar {
-  counter-reset: step;
-  width: 100%;
-  padding: 0 3% 0 20%;
-}
-
-.progressbar li {
-  list-style: none;
-  display: inline-block;
-  width: 30.33%;
-  text-align: center;
-}
-
-.progressbar li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  border: 1px solid #747474;
-  border-radius: 100%;
-  display: inline-block;
-  text-align: center;
-  margin: 0 10px 10px 0;
-  background-color: #747474;
-  color: #ffffff;
-}
-
-.progressbar li:after {
-  content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0＞';
-}
-
-.progressbar li:last-child:after {
-  content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
-}
-
-.progressbar li.active {
-  color: #ffc715;
-}
-
-.progressbar li.active:before {
-  border-color: #ffc715;
-  background-color: #ffc715;
-  color: rgb(255, 255, 255);
-}
-
-.progressbar li.active + li:after {
-  /* background-color: green; */
-}
-
-@media screen and (max-width: 375px) {
-  .display-in-mobile {
-    display: none;
+  .container {
+    margin-top: 150px;
+    width: 100%;
   }
-}
+
+  .progressbar {
+    margin-top: 150px;
+    counter-reset: step;
+    width: 100%;
+    padding: 0 3% 0 20%;
+  }
+
+  .progressbar li {
+    list-style: none;
+    display: inline-block;
+    width: 30.33%;
+    text-align: center;
+  }
+
+  .progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #747474;
+    border-radius: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    background-color: #747474;
+    color: #ffffff;
+  }
+
+  .progressbar li:after {
+    content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0＞';
+  }
+
+  .progressbar li:last-child:after {
+    content: '\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0';
+  }
+
+  .progressbar li.active {
+    color: #ffc715;
+  }
+
+  .progressbar li.active:before {
+    border-color: #ffc715;
+    background-color: #ffc715;
+    color: rgb(255, 255, 255);
+  }
+
+  .progressbar li.active + li:after {
+    /* background-color: green; */
+  }
+
+  @media screen and (max-width: 375px) {
+    .display-in-mobile {
+      display: none;
+    }
+
+    .progressbar {
+      margin-top: 0px;
+    }
+  }
 }

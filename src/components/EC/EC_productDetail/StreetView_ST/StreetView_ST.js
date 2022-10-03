@@ -1,5 +1,5 @@
 import React from 'react';
-import './StreeView_STMap.scss';
+import './StreetView_STMap.scss';
 import {
   GoogleMap,
   Marker,

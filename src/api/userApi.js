@@ -152,12 +152,9 @@ export const resetPassword = async (data, setUser, navigate) => {
         false,
         `請至 ${data.email} 收取信件`
       );
-    // if (result.data.action === 'validation') {
-    //   return navigate(`/?valid_code=${result.data.newCode}&validation=true`);
-    // }
     if (result.data.action === 'reset') {
       navigate('/');
-      setUser((user) => ({ ...user, data: [], auth: false }));
+      setUser((user) => ({ ...user, data: {}, auth: false }));
       return handleSuccess('密碼重設成功', false, '請使用新密碼登入');
     }
   } catch (error) {
@@ -179,4 +176,51 @@ export const getUserCollection = async (setData) => {
   }
 };
 
-export const getUsercollection = async () => {};
+export const updateCollectionItem = async (id) => {
+  try {
+    const { data } = await axios.post(
+      `${API_URL}/collect/product/${id}`,
+      {},
+      credentialsConfig
+    );
+
+    return data.action === 'delete' ? true : false;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const editPassword = async (data, setUser, navigate) => {
+  try {
+    const result = await axios.post(
+      `${API_URL}/user/edit/password`,
+      data,
+      credentialsConfig
+    );
+    navigate('/');
+    setUser((user) => ({ ...user, data: {}, auth: false }));
+    handleSuccess(
+      '新密碼設置成功',
+      false,
+      '由於更新密碼，平台已將您登出<br>請使用新密碼登入'
+    );
+  } catch (error) {
+    console.error(error);
+    handleFailed(error.response.data.message);
+  }
+};
+
+export const createPassword = async (data, setUser) => {
+  try {
+    const result = await axios.post(
+      `${API_URL}/user/password`,
+      data,
+      credentialsConfig
+    );
+    setUser((user) => ({ ...user, data: { ...user.data, password: true } }));
+    handleSuccess('密碼設置成功', false, '未來可使用此組密碼進行平台一般登入');
+  } catch (error) {
+    console.error(error);
+    handleFailed(error.response.data.message);
+  }
+};

@@ -5,7 +5,7 @@ import { API_URL } from '../../utils/config';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-
+console.log('Googlemap_key',Googlemap_key);
 const TravelPlaces = () => {
   // ID從網址字串抓
   const location = useLocation();
@@ -21,14 +21,18 @@ const TravelPlaces = () => {
 
   useEffect(() => {
     const callTravelTicketApi = async () => {
+
       try {
         const result = await axios.get(`${API_URL}/travelTicket/title`, {
           withCredentials: true,
         });
+        console.log('travelTicket========================',result);
+
         const data = result.data;
         setTravelTicket(data);
       } catch (err) {
         console.error('callTravelTicketApi Error', err);
+          console.log('travelTicket========================');
       }
     };
     callTravelTicketApi();

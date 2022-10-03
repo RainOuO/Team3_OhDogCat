@@ -13,7 +13,6 @@ const ResetPwdCard = ({ cancel, code, setUser, navigate }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('code', code);
     resetPassword(
       {
         action: 'reset',
@@ -48,7 +47,7 @@ const ResetPwdCard = ({ cancel, code, setUser, navigate }) => {
                 type="password"
                 name="confirmPassword"
                 className="form-control"
-                placeholder="請輸入新密碼"
+                placeholder="請再輸入一次密碼"
                 value={password.confirmPassword}
                 onChange={handleInputChange}
                 required

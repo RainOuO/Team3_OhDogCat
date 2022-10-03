@@ -57,17 +57,23 @@ const EcCommodityHomepage = () => {
   return (
     <div className="ecHomePage">
       <div className="EcCommodityHomepage_main">
-        <SearchBar
-          searchBar_title="想要什麼商品呢"
-          searchBar_placeholder="好吃的狗罐罐"
-          search={search}
-          setSearch={setSearch}
-          titleSearch={titleSearch}
-          setTitleSearch={setTitleSearch}
-          setTypeId={4}
-          typeId={4}
-        />
-        <EcHomePageSlider ecTypeSlider={commoditySlider} />
+        <div className="EcEnjoyHomepage_main_bg md-2">
+          <SearchBar
+            searchBar_title="想要什麼商品呢"
+            searchBar_placeholder="好吃的狗罐罐"
+            search={search}
+            setSearch={setSearch}
+            titleSearch={titleSearch}
+            setTitleSearch={setTitleSearch}
+            setTypeId={4}
+            typeId={4}
+          />
+          <div className="BGCircle1"></div>
+          <div className="BGCircle2"></div>
+          <div className="BGCircle3"></div>
+          <div className="BGCircle4"></div>
+          <EcHomePageSlider ecTypeSlider={commoditySlider} />
+        </div>
         <EcHomePageCategory ecTypeCategory={commodityCategory} />
         <EcHomePageCard ecTypeCardTitle={cardTitle[0]} ecTypeCard={fishCard} />
         <EcHomePageCard ecTypeCardTitle={cardTitle[1]} ecTypeCard={waterCard} />

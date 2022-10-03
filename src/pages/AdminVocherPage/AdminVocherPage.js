@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import dogIcon from '../../images/travel_dog_paws.svg';
-import { getUserVoucher } from '../../api/userApi';
 import Vouchers from '../../components/adminPage/Vouchers';
 import './_adminVocherPage.scss';
 
 const AdminVocherPage = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    getUserVoucher(setData);
-  }, []);
-
   return (
     <div className="d-flex flex-fill">
       <div className="flex-fill">
@@ -29,7 +22,7 @@ const AdminVocherPage = () => {
               </div>
             }
           >
-            <Vouchers data={data} valid={true} />
+            <Vouchers valid={true} />
           </Tab>
           <Tab
             eventKey="2"
@@ -40,7 +33,7 @@ const AdminVocherPage = () => {
               </div>
             }
           >
-            <Vouchers data={data} valid={false} />
+            <Vouchers valid={false} />
           </Tab>
         </Tabs>
       </div>

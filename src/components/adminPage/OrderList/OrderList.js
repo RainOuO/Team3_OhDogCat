@@ -18,7 +18,7 @@ const OrderList = () => {
     ? data.map((value) => {
         const imgUrl = `${BASE_URL + value.photo_path}/${value.main_photo}`;
         return (
-          <div key={value.order_time} className="order_list d-flex mb-5">
+          <div key={value.order_time} className="order_list d-flex">
             <div className="order_info_header d-flex align-items-center">
               <p className="flex-fill">{value.store_name}</p>
               <div>

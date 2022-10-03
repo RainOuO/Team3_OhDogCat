@@ -8,7 +8,8 @@ import PasswordEditCard from '../../../components/cards/PasswordEditCard';
 import ScoreCard from '../../../components/cards/ScoreCard';
 import ForgetPwdCard from '../../../components/cards/ForgetPwdCard';
 import ResetPwdCard from '../../../components/cards/ResetPwdCard';
-import { handleSuccess, handleFailed } from './handleStatusCard';
+import { handleSuccess } from './handleStatusCard';
+import CreatePwdCard from '../../../components/cards/CreatePwdCard';
 
 export const handleLoginCard = (config, setUser) => {
   loginCardFire();
@@ -85,7 +86,7 @@ export const handleVoucherExchangeCard = (itemData) => {
   }
 };
 
-export const handlePasswordEditCard = () => {
+export const handlePasswordEditCard = (setUser, navigate) => {
   inputCardFire();
   function inputCardFire() {
     const inputCard = withReactContent(Swal);
@@ -94,10 +95,31 @@ export const handlePasswordEditCard = () => {
         <PasswordEditCard
           confirm={inputCard.clickConfirm}
           cancel={inputCard.clickCancel}
+          setUser={setUser}
+          navigate={navigate}
         />
       ),
       showConfirmButton: false,
     });
+  }
+};
+
+export const handlePasswordCreateCard = (setUser) => {
+  inputCardFire();
+  function inputCardFire() {
+    const inputCard = withReactContent(Swal);
+    inputCard
+      .fire({
+        html: (
+          <CreatePwdCard
+            confirm={inputCard.clickConfirm}
+            cancel={inputCard.clickCancel}
+            setUser={setUser}
+          />
+        ),
+        showConfirmButton: false,
+      })
+      .then((result) => {});
   }
 };
 
@@ -147,7 +169,6 @@ export const handleForgetPwdCard = () => {
 export const handleResetPwdCard = (code, setUser, navigate) => {
   inputCardFire();
   function inputCardFire() {
-    console.log('handle', code);
     const inputCard = withReactContent(Swal);
     inputCard
       .fire({

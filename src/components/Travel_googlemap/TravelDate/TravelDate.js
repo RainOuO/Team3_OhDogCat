@@ -193,7 +193,7 @@ const TravelDate = ({
                   <div key={data.user_id}>
                     {editdetail ? (
                       <input
-                        className="travelDrage_input_title"
+                        className="travelDrage_input_title ms-2"
                         type="text"
                         id="title"
                         name="title"

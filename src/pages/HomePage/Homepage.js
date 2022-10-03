@@ -68,7 +68,6 @@ const Homepage = () => {
               <h2>最新情報</h2>
             </div>
             <div className="news_sidebar_nav">
-              {/* // TODO: 電腦版 tab，要換字 */}
               <ul className="list-unstyled m-0 desktop">
                 <li className={newsActive === 1 ? 'active' : ''}>
                   <button

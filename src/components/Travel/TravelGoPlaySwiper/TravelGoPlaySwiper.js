@@ -85,11 +85,11 @@ const TravelGoPlaySwiper = () => {
             return (
               <>
                 <SwiperSlide>
-                  <div className='goTripItem'>
-                    <div className='goTripImg'>
+                  <div className="goTripItem">
+                    <div className="goTripImg">
                       <img src={v.img} alt="" />
                     </div>
-                    <div className='goTripName'>
+                    <div className="goTripName">
                       <p>{v.name}</p>
                     </div>
                   </div>

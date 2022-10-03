@@ -1,4 +1,4 @@
-import StreeViewGEMap from '../StreeView_GEMap/StreeView_GEMap';
+import StreetViewGEMap from '../StreeView_GEMap/StreetView_GEMap';
 import { useLoadScript } from '@react-google-maps/api';
 import { Googlemap_key } from '../../../../utils/config';
 
@@ -8,6 +8,6 @@ const CommunityGooglemap = () => {
     libraries: ['places'],
   });
   if (!isLoaded) return <div>Loading...!</div>;
-  return <StreeViewGEMap />;
+  return <StreetViewGEMap />;
 };
 export default CommunityGooglemap;

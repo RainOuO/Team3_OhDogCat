@@ -1,0 +1,50 @@
+.create_pwd_card--global {
+  position: relative;
+  overflow: hidden;
+  h2 {
+    font-weight: bold;
+  }
+  p {
+    font-size: 16px;
+    color: #adadad;
+  }
+  .create_pwd_card {
+    &_content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      padding: 0 8px;
+      margin-top: .6em;
+      gap: 8px;
+      transition: .3s ease-out;
+    }
+    
+    &_button  {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 0;
+      background-color: rgba(255, 194, 0, 1);
+      color: #FFF;
+      font-weight: bold;
+      &.cancel {
+      background-color: #c0c0c0;
+      }
+    }
+  }
+}
+
+@keyframes inputError {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90%{
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80%{
+    transform: translateX(2px);
+  }
+}

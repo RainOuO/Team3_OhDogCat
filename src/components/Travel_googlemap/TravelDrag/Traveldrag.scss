@@ -306,46 +306,17 @@ $font-weight: 700;
         }
       }
     }
+
     .edit_save_btn {
       width: 200px;
-      background-color: #feefc3;
-      color: #000;
+      background-color: #ffc200;
+      color: white;
       font-weight: 900;
       font-size: 18px;
       &:hover {
         background-color: #ef7a70;
         color: #fff;
       }
-    }
-
-    // 不知道是啥的 travelDrag_container
-    .travelDrag_container {
-      // height: 590px;
-
-      // .travelDrag_container::-webkit-scrollbar {
-      //   width: 1em;
-      // }
-
-      // .travelDrag_container::-webkit-scrollbar-button {
-      //   background: #fff;
-      // }
-
-      // .travelDrag_container::-webkit-scrollbar-track-piece {
-      //   background: #aaa;
-      // }
-
-      // .travelDrag_container::-webkit-scrollbar-corner {
-      //   border: 1px solid red;
-      // }
-
-      // .travelDrag_container::-webkit-scrollbar-track {
-      //   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      // }
-
-      // .travelDrag_container::-webkit-scrollbar-thumb {
-      //   background-color: white;
-      //   border: 1px solid slategrey;
-      // }
     }
   }
 }

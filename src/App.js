@@ -13,6 +13,7 @@ import AdminCollectionPage from './pages/AdminCollectionPage';
 import AdminMessageListPage from './pages/AdminMessageListPage';
 import AdminProfilePage from './pages/AdminProfilePage';
 import AdminOrderListPage from './pages/AdminOrderListPage';
+import Conversation from './components/layout/Conversation';
 import CommunityList from './pages/CommunityList';
 import CommunityHomePage from './pages/CommunityHomePage';
 import CommunityManagement from './pages/CommunityManagement';
@@ -81,6 +82,7 @@ function App() {
           </Routes>
           <Outlet />
           <Footer />
+          <Conversation />
           <ScrollToTop />
         </SocketProvider>
       </UserInfoProvider>

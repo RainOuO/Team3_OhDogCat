@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import voucherDetail from '../VoucherDetail/VoucherDetail';
 import { handleHtmlCard } from '../../../utils/handler/card/handleHtmlCard';
 import { handleVoucherExchangeCard } from '../../../utils/handler/card/handleInputCard';
+import { getUserVoucher } from '../../../api/userApi';
+
 import './_vouchers.scss';
 
 const BASE_URL = process.env.REACT_APP_BASE_API_URL;
 
-const Vouchers = ({ valid, data }) => {
+const Vouchers = ({ valid }) => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getUserVoucher(setData);
+  }, []);
+  if (data === null) return '';
   return valid ? <ValidVoucher data={data} /> : <InValidVoucher data={data} />;
 };
 

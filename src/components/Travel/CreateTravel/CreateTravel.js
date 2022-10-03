@@ -29,22 +29,28 @@ const CreateTravel = () => {
   return (
     <>
       <div className="CreateTravel">
-
-      <img className="SloganImg disappear animate__animated animate__tada" src={dog2} alt="" />
-          <div className="BGCircle1 disappear"></div>
-          <div className="BGCircle2 disappear"></div>
-          <div className="BGCircle3 disappear"></div>
-          <div className="BGCircle4 disappear"></div>
-          <div className="BGCircle5 disappear"></div>
-          <div className="BGCircle6 disappear"></div>
-          <p className='mainSlogan1'>我想出去玩！</p>
-          <p className='slogan'>趕快跟著我一起規劃吧<FaPaw className="FaPaw"/></p>
+        <img
+          className="SloganImg disappear animate__animated animate__tada"
+          src={dog2}
+          alt=""
+        />
+        <div className="BGCircle1 disappear"></div>
+        <div className="BGCircle2 disappear"></div>
+        <div className="BGCircle3 disappear"></div>
+        <div className="BGCircle4 disappear"></div>
+        <div className="BGCircle5 disappear"></div>
+        <div className="BGCircle6 disappear"></div>
+        <p className="mainSlogan1">我想出去玩！</p>
+        <p className="slogan">
+          趕快跟著我一起規劃吧
+          <FaPaw className="FaPaw" />
+        </p>
         <div className="FormBody">
           <Form>
             {/* <h2 className="Title">新增行程 </h2> */}
             <div className="InputGroup">
               <InputGroup className="InputGroupForm">
-                <div className='travelName'>
+                <div className="travelName">
                   <Form.Control
                     type="text"
                     name="title"

@@ -124,7 +124,7 @@ function ShoppingCart({ name, ...props }) {
               {/* ----放進來的票券---- */}
               {cart.map((v, i) => {
                 return (
-                  <div className="mainRowObject">
+                  <div key={v.product_id} className="mainRowObject">
                     <div className="mainRowObjectContent">
                       <div className="mainRowObjectPic">
                         <img

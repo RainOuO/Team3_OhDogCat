@@ -12,7 +12,6 @@ import { Container } from 'react-bootstrap';
 
 const TravelHomePage = () => {
   const [travelCommunity, setTravelCommunity] = useState([]); // 拿日期 標題
-  const [travelUser, setTravelUser] = useState([]); // 拿使用者有幾筆行程
 
   useEffect(() => {
     const calltitledateApi = async () => {
@@ -29,27 +28,14 @@ const TravelHomePage = () => {
     calltitledateApi();
   }, []);
 
-  useEffect(() => {
-    const fetchUsertrip = async () => {
-      try {
-        const result = await axios.get(`${API_URL}/travelUserplanning/get`, {
-          withCredentials: true,
-        });
-        const data = result.data;
-        setTravelUser(data);
-      } catch (err) {
-        console.error('callPlanningAPI Error', err);
-      }
-    };
-    fetchUsertrip();
-  }, []);
+  
   return (
     <>
       <div className="BG">
         <div className="TravelHomePage">
           <CreateTravel />
-          <div className='mainSection'>
-            <MyTravel travelUser={travelUser} />
+          <div className="mainSection">
+            <MyTravel/>
             <p className="travelGoPlayTitle">｜看看大家都去哪裡玩 </p>
             <TravelGoPlaySwiper />
             <p className="TravelEveryOneSwiperTitle">｜路克路克大家的行程</p>

@@ -175,9 +175,8 @@ const TravelDrag = ({
                       ) : (
                         <img
                           //TODO:要Demo再放照片 每次渲染都號一次google maps api
-                          // !src={item.google_photo}
-
-                          src="https://picsum.photos/1300/1300?random31"
+                          src={item.google_photo}
+                          // src="https://picsum.photos/1300/1300?random31"
                           className="Travel_Drag_card_img "
                           alt="1..."
                         />
@@ -255,7 +254,7 @@ const TravelDrag = ({
                             )}
                           >
                             <div
-                              className="travelDrag_tittle"
+                              className="travelDrag_tittle "
                               onClick={() => {
                                 setGetlocateid(item.id);
                               }}
@@ -271,8 +270,8 @@ const TravelDrag = ({
                                   ) : (
                                     <img
                                       //要Demo再放照片 每次炫覽都號一次google maps api
-                                      // src={item.google_photo}
-                                      src="https://picsum.photos/300/1300?random31"
+                                      src={item.google_photo}
+                                      // src="https://picsum.photos/300/1300?random31"
                                       className="Travel_Drag_card_exit "
                                       alt="..."
                                     />
@@ -281,10 +280,10 @@ const TravelDrag = ({
                               </div>
                               <img
                                 src={mapicon}
-                                className="travel_Dragmapicon ms-3"
+                                className="travel_Dragmapicon ms-5"
                                 alt="#123"
                               />
-                              <div className="travel_Dragmaptitle">
+                              <div className="travel_Dragmaptitle ms-2">
                                 {item.locate_name}
                               </div>
                             </div>

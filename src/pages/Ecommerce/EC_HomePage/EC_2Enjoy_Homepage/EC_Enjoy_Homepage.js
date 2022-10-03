@@ -52,16 +52,22 @@ function EcEnjoyHomepage() {
   return (
     <div className="ecHomePage">
       <div className="EcEnjoyHomepage_main">
-        <SearchBar
-          searchBar_title="想去哪裡玩呢"
-          searchBar_placeholder="來去你心裡玩耍吧"
-          search={search}
-          setSearch={setSearch}
-          titleSearch={titleSearch}
-          setTitleSearch={setTitleSearch}
-          typeId={2}
-        />
-        <EcHomePageSlider ecTypeSlider={enjoySlider} />
+        <div className="EcEnjoyHomepage_main_bg">
+          <SearchBar
+            searchBar_title="想去哪裡玩呢"
+            searchBar_placeholder="來去你心裡玩耍吧"
+            search={search}
+            setSearch={setSearch}
+            titleSearch={titleSearch}
+            setTitleSearch={setTitleSearch}
+            typeId={2}
+          />
+          <div className="BGCircle1"></div>
+          <div className="BGCircle2"></div>
+          <div className="BGCircle3"></div>
+          <div className="BGCircle4"></div>
+          <EcHomePageSlider ecTypeSlider={enjoySlider} />
+        </div>
         <EcHomePageCategory ecTypeCategory={enjoyCategory} />
         <EcHomePageCard
           ecTypeCardTitle={cardTitle[0]}

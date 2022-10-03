@@ -53,7 +53,6 @@ export const callLoginApi = async (loginInfo, setUser, confirm) => {
     setUser((user) => ({ ...user, data: result.data.user, auth: true }));
     let isInfoCompleted = true;
     for (const key in result.data.user) {
-      console.log(key, result.data.user[key]);
       if (!result.data.user[key]) {
         isInfoCompleted = false;
         break;
@@ -114,6 +113,7 @@ export const callVerifyApi = async (setUser) => {
       auth: false,
       firstVerify: true,
     }));
+    handleFailed('登入憑證已逾時，請重新登入');
   }
 };
 
@@ -169,11 +169,6 @@ export const callSendValidationMail = async (data) => {
       data,
       credentialsConfig
     );
-    console.log(result.data);
-    // setUser((user) => ({
-    //   ...user,
-    //   firstVerify: true,
-    // }));
   } catch (err) {
     console.error(err);
   }

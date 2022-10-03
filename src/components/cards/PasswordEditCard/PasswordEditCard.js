@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
-import { editSocialName } from '../../../api/userApi';
+import { editPassword } from '../../../api/userApi';
+import { handleFailed } from '../../../utils/handler/card/handleStatusCard';
 import './_passwordEditCard.scss';
 
-const PasswordEditCard = ({ confirm }) => {
+const PasswordEditCard = ({ confirm, setUser, navigate }) => {
   const [data, setData] = useState({
     oldPassword: '',
-    newPassword: '',
+    password: '',
     confirmPassword: '',
   });
   const [inputError, setInputError] = useState('');
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // if (data.oldPassword === data.newPassword)
+    //   return handleFailed('請輸入與舊密碼不同的新密碼');
+    // if (data.confirmPassword !== data.newPassword)
+    //   return handleFailed('兩次密碼輸入不一致');
+    editPassword(data, setUser, navigate);
   };
 
   const handleInputChange = (e) => {
@@ -20,11 +26,11 @@ const PasswordEditCard = ({ confirm }) => {
 
   return (
     <>
-      <div className="social_name_card--global d-flex">
-        <div className={`social_name_card_content social_name_card`}>
+      <div className="edit_pwd_card--global d-flex">
+        <div className={`edit_pwd_card_content edit_pwd_card`}>
           <h2>重新設置密碼</h2>
           <form
-            className="social_name_card_form d-flex flex-column h-100"
+            className="edit_pwd_card_form d-flex flex-column h-100"
             onSubmit={handleSubmit}
           >
             <div className="mb-3">
@@ -41,7 +47,7 @@ const PasswordEditCard = ({ confirm }) => {
             <div className="mb-3">
               <input
                 type="password"
-                name="newPassword"
+                name="password"
                 className={`form-control ${inputError ? 'error' : ''}`}
                 placeholder="輸入新密碼"
                 value={data.newPassword}
@@ -62,7 +68,7 @@ const PasswordEditCard = ({ confirm }) => {
             </div>
             <p className={`${inputError ? 'active' : ''}`}>{inputError}</p>
             <div>
-              <button className=" social_name_card_button" type="submit">
+              <button className=" edit_pwd_card_button" type="submit">
                 送出
               </button>
             </div>

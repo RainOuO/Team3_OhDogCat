@@ -59,7 +59,7 @@ function OrderDetail(props) {
       setOrderBuying({
         user_id: cartProductData.user_id,
         product_id: cartProductData.product_id,
-        product_name: cartProductData.product_name,
+        product_name: cartProductData.name,
         product_quantity: cartProductData.quantity,
         product_price: cartProductData.price,
         order_no: packageIdGenerater(cartProductData.user_id),
@@ -72,6 +72,7 @@ function OrderDetail(props) {
         coupon_number: 8,
         coupon_name: '小確幸92折優惠',
         order_time: moment().format('YYYY-MM-DD HH:mm:ss'),
+        store_name:cartProductData.store_name,
       });
       // console.log('orderBuying', orderBuying);
     };

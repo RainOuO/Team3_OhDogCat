@@ -23,6 +23,7 @@ const AdminCenter = () => {
   const { data } = user;
 
   const handlePhotoChange = async (e) => {
+    console.log(e);
     console.log(e.target.files[0]);
     try {
       let formData = new FormData();
@@ -32,13 +33,11 @@ const AdminCenter = () => {
       });
       setUser((data) => ({ ...data, data: result.data.user }));
       handleSuccess('個人照片更新成功！');
-      console.log(result);
     } catch (error) {
       console.error(error);
       handleFailed('個人照片更新失敗');
     }
   };
-  console.log(data);
   return (
     <div>
       <div className="admin_side">
@@ -52,10 +51,9 @@ const AdminCenter = () => {
                 alt=""
               />
               <input
-                type="file"
                 id="image"
+                type="file"
                 accept="image/*"
-                multiple="multiple"
                 onChange={handlePhotoChange}
               />
               <HiOutlineCamera />
@@ -113,7 +111,7 @@ const AdminCenter = () => {
               <p className="d-block mt-3">我的票券</p>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               to="/admin/messages"
               className="admin_select text-decoration-none icons d-flex"
@@ -124,7 +122,7 @@ const AdminCenter = () => {
               ></RiMessage3Line>
               <p className="d-block mt-3">訊息管理</p>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to="/admin/community"

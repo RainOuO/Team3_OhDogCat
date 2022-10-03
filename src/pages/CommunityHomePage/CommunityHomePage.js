@@ -29,6 +29,10 @@ const CommunityHomePage = () => {
     setShowCFBox(e);
   };
 
+  //  搜尋用
+  const [search, setSearch] = useState('');
+  const [keywordSearch, setKeywordSearch] = useState('');
+
   useEffect(() => {
     const fetchMyTrip = async () => {
       const result = await axios.get(
@@ -83,6 +87,10 @@ const CommunityHomePage = () => {
             <SearchBar
               searchBar_title="是不是在找我呢"
               searchBar_placeholder="我無處安放的可愛呀"
+              search={search}
+              setSearch={setSearch}
+              keywordSearch={keywordSearch}
+              setKeywordSearch={setKeywordSearch}
             />
           </div>
           <p className="mainSlogan1 disappear">Sharing the life,</p>

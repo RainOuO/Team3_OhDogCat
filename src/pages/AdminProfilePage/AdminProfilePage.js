@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import { handlePasswordEditCard } from '../../utils/handler/card/handleInputCard';
+import {
+  handlePasswordEditCard,
+  handlePasswordCreateCard,
+} from '../../utils/handler/card/handleInputCard';
+import { handleInfoComfirm } from '../../utils/handler/card/handleStatusCard';
 import {
   handleWarning,
   handleSuccess,
@@ -62,6 +66,7 @@ const AdminProfilePage = () => {
       case 2:
         if (edit.name.lastName + edit.name.firstName === '')
           return handleWarning('更新欄位不可為空');
+        if (edit.name.lastName + edit.name.firstName === user.data.name) return;
         apiConfig.target = 'name';
         apiConfig.data = { name: edit.name.lastName + edit.name.firstName };
         apiConfig.objKey = 'name';
@@ -94,6 +99,18 @@ const AdminProfilePage = () => {
   const handleValidationBtn = () => {
     callSendValidationMail({ action: 'mail' });
     handleSuccess('已寄發帳戶驗證信', false, `請至您的信箱收取信件`);
+  };
+
+  const handlePasswordEditBtn = () => {
+    if (user.data.password) {
+      handlePasswordEditCard(setUser, navigate);
+    } else {
+      handleInfoComfirm(
+        '目前使用第三方平台認證登入',
+        () => handlePasswordCreateCard(setUser),
+        '你仍然可以設定一組密碼作為平台一般登入密碼使用<br/>需要前往設定嗎？'
+      );
+    }
   };
 
   useEffect(() => {
@@ -176,7 +193,7 @@ const AdminProfilePage = () => {
             />
           </div>
           <div className="profile_password text-end pt-5 mb-5">
-            <button onClick={handlePasswordEditCard}>更改密碼</button>
+            <button onClick={() => handlePasswordEditBtn()}>更改密碼</button>
           </div>
         </div>
       </div>
@@ -237,7 +254,7 @@ const RealName = ({
 }) => {
   return (
     <div className="d-flex profile_list">
-      <div className="profile_label">用戶真實姓名</div>
+      <div className="profile_label">真實姓名</div>
       <div className="d-flex flex-fill align-items-center">
         {editTarget !== 2 && (
           <div className="profile_info">{rowData ? rowData : '尚未設置'}</div>

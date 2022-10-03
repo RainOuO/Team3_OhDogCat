@@ -14,13 +14,13 @@ const TravelEveryOneSwiper = ({ travelCommunity }) => {
     // 抓社群所有資料
     const fetchAllPostData = async () => {
       const result = await axios.get(`${API_URL}/communityHomePage/allPost`);
-      console.log(result.data);
+      // console.log(result.data);
       setAllPost(result.data);
     };
     fetchAllPostData();
   }, []);
 
-  console.log(allPost);
+  // console.log('======================allPost', allPost);
   return (
     <>
       <div className="TravelEveryOneSwiper">

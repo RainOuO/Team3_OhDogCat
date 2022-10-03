@@ -1,5 +1,5 @@
 import React from 'react';
-import './StreeView_GEMap.scss';
+import './StreetView_GEMap.scss';
 import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 import { useState, useEffect, useRef } from 'react';
 // const centers = [

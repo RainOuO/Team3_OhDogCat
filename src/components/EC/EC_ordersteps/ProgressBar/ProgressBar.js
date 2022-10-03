@@ -5,7 +5,7 @@ function ProgressBar(props) {
 
   return (
     <>
-      <div className="ProgressBar pt-5">
+      <div className="ProgressBar">
         <div className="display-in-mobile">
           <ul className="progressbar">
             {Array(maxSteps)

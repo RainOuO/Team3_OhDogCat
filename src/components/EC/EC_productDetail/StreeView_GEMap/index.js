@@ -1,1 +1,1 @@
-export { default } from './StreeView_GEMap';
+export { default } from './StreetView_GEMap';

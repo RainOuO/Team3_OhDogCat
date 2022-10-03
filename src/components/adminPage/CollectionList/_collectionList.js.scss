@@ -26,14 +26,15 @@ $info-color: #2DA9D7;
       border: 2px solid #FFC715;
       overflow: hidden;
       transition: .2s linear;
+      margin-bottom: 24px;
       &:hover {
         box-shadow: 0 0 8px rgba(0, 0, 0, .1);
-        transform: scale(1.01);
       }
     }
     &_img {
       width: 300px;
       height: 200px;
+      cursor: pointer;
     }
     &_info {
       display: flex;
@@ -46,10 +47,18 @@ $info-color: #2DA9D7;
           -webkit-line-clamp: 2; 
           -webkit-box-orient: vertical;
           white-space: normal;
+          cursor: pointer;
         }
       }
       &_intro {
         color: #747474;
+        display: -webkit-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2; 
+          -webkit-box-orient: vertical;
+          white-space: normal;
+          cursor: pointer;
       }
       &_detail {
         .store, .validity {
@@ -84,9 +93,21 @@ $info-color: #2DA9D7;
       width: 30px;
       height: 30px;
       transform: scale(2);
+      &:active {
+        svg {
+          opacity: .5;
+        }
+      }
+      &:hover {
+        svg {
+          color: #df695e;
+        }
+      }
       svg {
         width: calc(20px / 2);
         height: calc(20px / 2);
+        color: #EF7A70;
+        transition: .3s;
       }
     }
   }
