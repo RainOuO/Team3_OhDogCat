@@ -113,9 +113,9 @@ function CommentBar() {
                   <div className="user_comment_text">{data.comment}</div>
                 </div>
               </div>
-              {/* <div className="user_comment_datetime d-flex align-self-end">
+              <div className="user_comment_datetime d-flex align-self-end">
                 <p className="d-block">留言時間： {data.create_time}</p>
-              </div> */}
+              </div>
             </li>
           );
         })}

@@ -59,8 +59,8 @@ export default function CommunityListCard({ postData, search }) {
                       </div>
                       {/* 內文 */}
                       <p className="comList_main_card_text my-2">
-                        {/* { (data.content.replace(/<\/?.+?>/g, ''))} */}
-                        {data.content}
+                        { (data.content.replace(/<\/?.+?>/g, ''))}
+                        {/* {data.content} */}
                       </p>
                       {/* 地點、讚數 */}
                       <div className="comList_main_card_bottom_text d-flex justify-content-between align-items-center mt-4">
