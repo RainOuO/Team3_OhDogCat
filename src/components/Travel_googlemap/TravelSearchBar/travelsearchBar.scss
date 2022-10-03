@@ -3,12 +3,13 @@ $sup_color: #eeb569;
 $icon_color: #ef7a70;
 $font-size: 1.2rem;
 $font-weight: 700;
+
 // google map searchbar的css  別刪除!
 [data-reach-combobox-popover] {
   position: absolute !important;
-  width: 788.609px !important;
-  left: 875px !important;
-  top: 140.516px !important;
+  width: 875.609px !important;
+  left: 796px !important;
+  top: 225.516px !important;
   background-color: white !important;
   cursor: pointer !important;
   list-style: none !important;
@@ -19,17 +20,19 @@ $font-weight: 700;
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px;
+  left: -1px;
   bottom: 1px;
   z-index: 1;
   width: 820px;
-  transition: 0.5s ease-in;
-  animation: wrapper-gradient 0.3s linear;
+  transition: 0.1s ease-in;
+  animation: wrapper-gradient 0.1s linear;
+
   @keyframes wrapper-gradient {
     0% {
-      transform: translateY(-100%);
+      transform: translateY(-20%);
     }
+
     100% {
       transform: translateY(0);
     }
@@ -38,19 +41,19 @@ $font-weight: 700;
   input:focus {
     outline: none;
   }
+
   .travel_input_searchBar_sum {
-    position: relative;
-    left: 5px;
-    width: 850px;
+    width: 961px;
     border-radius: 8px;
+
     .travelmap_combobox-input {
       width: 100%;
-      padding: 0.5rem 2rem;
+      padding: 0.8rem;
+      border: 3px solid #ffc715;
       border-top-left-radius: 8px;
       border-bottom-left-radius: 8px;
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
-      border: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
     }
   }
 
@@ -75,12 +78,14 @@ $font-weight: 700;
   background-color: $main_color;
   color: white;
   width: 90px;
+
   &:hover {
     background-color: $sup_color;
     font-weight: $font-weight;
     font-size: $font-size;
   }
 }
+
 .travelSearchBar_photo {
   // margin-left: 80px;
   margin-right: 60px;
@@ -99,21 +104,24 @@ $font-weight: 700;
   width: 845px;
   height: 150px;
   border: 1px solid #ccc;
+
   .travelSearchBar_Card {
     cursor: pointer;
     height: 110px;
     margin: 0px 3rem;
     width: 600px;
   }
+
   .travelSearchBar_CardTittle {
     margin-top: 40px;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 1.6rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 }
+
 .searchBAR_IconBack {
   display: none;
 }
@@ -122,6 +130,7 @@ $font-weight: 700;
   position: relative;
   transition: 0.3s ease-out;
   animation: travelDetail_fadeIn 0.5s ease-out 0s 1 forwards;
+
   @keyframes travelDetail_fadeIn {
     0% {
       opacity: 0;
@@ -137,6 +146,7 @@ $font-weight: 700;
   margin-top: 10px;
   margin-left: 10px;
   width: 500px;
+
   .travelSearchBar_backIcon {
     cursor: pointer;
 
@@ -145,8 +155,10 @@ $font-weight: 700;
       height: 35px;
     }
   }
+
   .travelSearch_storedetail_Div {
     width: 300px;
+
     .travelSearch_storedetail_tittle {
       overflow: hidden;
       white-space: nowrap;
@@ -162,13 +174,15 @@ $font-weight: 700;
   .travelSearch_storedetail_card {
     padding: 10px 10px;
     height: 605px;
+
     .travelSearch_storedetail_Div {
       position: relative;
     }
+
     .travelSearch_storedetail_photo {
       // margin-left: 30px;
       border-radius: 8px;
-      margin-top: 5px;
+      margin-top: -1px;
       width: 420px;
       height: 200px;
       // cursor: pointer;
@@ -176,6 +190,7 @@ $font-weight: 700;
       // right: -40px;
     }
   }
+
   .travelSearch_storedetail_contain {
     width: 220px;
     line-height: 2;
@@ -190,6 +205,7 @@ $font-weight: 700;
       // word-spacing: 10px;
     }
   }
+
   .travelSearch_storedetail_phone {
     position: relative;
     right: 58px;
@@ -197,10 +213,12 @@ $font-weight: 700;
     font-size: 20px;
     text-align: center;
     padding-right: 120px;
+
     svg {
       color: $icon_color;
     }
   }
+
   .travelmap_input_button {
     position: relative;
     // margin-top: 20px;
@@ -214,12 +232,14 @@ $font-weight: 700;
     background-color: $main_color;
     color: white;
     width: 120px;
+
     &:hover {
       background-color: $sup_color;
       font-weight: $font-weight;
       font-size: $font-size;
     }
   }
+
   .travelmap_input_selectDay {
     position: relative;
     left: 336px;

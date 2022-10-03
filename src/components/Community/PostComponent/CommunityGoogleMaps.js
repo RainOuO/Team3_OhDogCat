@@ -5,12 +5,12 @@ import { Googlemap_key } from '../../../utils/config';
 
 import { useLocation } from 'react-router-dom';
 
-const CommunityGooglemap = () => {
+const CommunityGooglemap = (post) => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: Googlemap_key,
     libraries: ['places'],
   });
   if (!isLoaded) return <div>Loading...!</div>;
-  return <PostMap />;
+  return <PostMap post={post} />;
 };
 export default CommunityGooglemap;

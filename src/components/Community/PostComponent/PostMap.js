@@ -1,8 +1,11 @@
 import React from 'react';
 import './PostMap.scss';
+
 //////////////////學儒專用地圖
 import { GoogleMap, Marker, InfoWindow } from '@react-google-maps/api';
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
+import { API_URL } from '../../../utils/config';
 const centers = [
   {
     id: 1,
@@ -35,7 +38,24 @@ const centers = [
     photo: 'https://picsum.photos/200/300?random5',
   },
 ];
-function PostMap({ lat, lng }) {
+function PostMap({ post }) {
+  // const [mapLocate, setMapLocate] = useState({});
+  // console.log('地圖值', post);
+  // const lat = post.latitude
+  // useEffect(() => {
+  //   const fetchLocate = async () => {
+  //     try {
+  //       const result = await axios.get(`${API_URL}/community/mapLocate`);
+  //       // 取得後端來的資料
+  //       console.log('result,data', result.data);
+  //       setMapLocate(result.data);
+  //     } catch (err) {
+  //       console.log('fetchLikeState', err);
+  //     }
+  //   };
+  //   fetchLocate();
+  // }, []);
+
   const mapRef = useRef(null);
   return (
     <div className="post_map">

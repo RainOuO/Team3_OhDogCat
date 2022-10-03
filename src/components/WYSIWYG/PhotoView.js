@@ -1,4 +1,8 @@
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
+//
+import './swiper.scss';
 import { BE_URL } from '../../utils/config';
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
@@ -58,10 +62,22 @@ export default function PhotoReviewSwiper({ list }) {
         <div className="foo locate_photo_single">
           <PhotoView
             key={locateID}
-            src={previewLoc ? previewLoc : BE_URL + '/' + tripLocPhoto}
+            src={
+              previewLoc
+                ? previewLoc
+                : tripLocPhoto
+                ? BE_URL + '/tripPost/' + tripLocPhoto
+                : defaultPhoto
+            }
           >
             <img
-              src={previewLoc ? previewLoc : BE_URL + '/' + tripLocPhoto}
+              src={
+                previewLoc
+                  ? previewLoc
+                  : tripLocPhoto
+                  ? BE_URL + '/tripPost/' + tripLocPhoto
+                  : defaultPhoto
+              }
               style={{ objectFit: 'cover' }}
               alt=""
             ></img>

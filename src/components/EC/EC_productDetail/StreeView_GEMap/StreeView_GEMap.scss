@@ -1,0 +1,76 @@
+$second_color: #e7e7e9;
+.streeView_GEMap_body {
+  max-width: 1070px;
+
+  .streeView_GEMap_body_container {
+    width: 1070px;
+    height: 650px;
+  }
+  .streeView_GEMap_InfoWindow {
+    display: flex;
+
+    width: 150px;
+
+    .streeView_GEMap_InfoWindow_wrap {
+      background-color: $second_color;
+      .streeView_GEMap_InfoWindow_photo {
+        background-color: $second_color;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        margin-bottom: 10px;
+      }
+    }
+    .streeView_GEMap_InfoWindow_aside {
+      background-color: $second_color;
+      flex-direction: column;
+      width: 95px;
+      padding-left: 10px;
+
+      .streeView_GEMap_InfoWindow_tittle {
+        padding-top: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 13px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+      }
+
+      .streeView_GEMap_InfoWindow_user {
+        line-height: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #000;
+      }
+    }
+  }
+  //如果要調css 這便權重可以調整
+  .gm-style .gm-style-iw-c {
+    padding-right: 10px !important;
+    padding-bottom: 0px !important;
+    max-width: 500px !important;
+    max-height: 326px !important;
+    min-width: 0px !important;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -100%);
+    background-color: $second_color;
+    border-radius: 8px;
+    box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
+  }
+  .gm-style-iw-d {
+    min-width: 0px !important;
+    overflow: auto !important;
+  }
+  .gm-style .gm-style-iw-tc::after {
+    background-color: $second_color !important;
+  }
+  .title .full-width {
+    background-color: $second_color !important;
+  }
+}

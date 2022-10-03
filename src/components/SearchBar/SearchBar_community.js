@@ -15,6 +15,7 @@ function SearchBar(props) {
     setSearch,
     postData,
   } = props;
+  console.log('關鍵字', keywordSearch);
   const searchWordParams = keywordSearch ? keywordSearch : '';
   const getPostData = postData ? postData : '';
 
@@ -35,7 +36,7 @@ function SearchBar(props) {
               maxLength={15}
               value={keywordSearch}
               onChange={(e) => {
-                console.log(e.target.value);
+                console.log('test', e.target.value);
                 setKeywordSearch(e.target.value);
               }}
             />

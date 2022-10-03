@@ -31,7 +31,8 @@ const ECHomePageCard = (props) => {
           modules={[Autoplay]}
           autoplay={{
             delay: 2000,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
+            reverseDirection: false,
           }}
           onSlideChange={(e) => {}}
           onSwiper={(swiper) => {}}

@@ -1,4 +1,5 @@
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import React, { useRef, useState } from 'react';
 // Import Swiper React components

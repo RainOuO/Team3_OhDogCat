@@ -6,6 +6,7 @@ import { TiLocation } from 'react-icons/ti';
 import './PostLocateArticle.scss';
 import { BE_URL } from '../../../utils/config';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import defaultPhoto from '../../../images/社群照片假圖300px.png';
 
 export default function PostLocateArticle({ post }) {
   const [locFiles, setLocFiles] = useState({ photos: '', locateID: '' });
@@ -45,9 +46,11 @@ export default function PostLocateArticle({ post }) {
               <>
                 <div className="my-2 post_dayCount">Day {data[0].days}</div>
                 {data.map((data, i) => {
-                  console.log('datajijijfe', data);
+                  {
+                    /* console.log('datajijijfe', data);
                   console.log('jijiejt', data.locate_photo);
-                  console.log(BE_URL + '/' + data.locate_photo);
+                  console.log(BE_URL + '/' + data.locate_photo); */
+                  }
                   return (
                     <>
                       <li
@@ -82,19 +85,27 @@ export default function PostLocateArticle({ post }) {
                                     <PhotoView
                                       key={index}
                                       style={{ objectFit: 'cover' }}
-                                      src={BE_URL + '/' + data.locate_photo}
+                                      src={
+                                        BE_URL +
+                                        '/tripPost/' +
+                                        data.locate_photo
+                                      }
                                     >
                                       <img
                                         alt=""
                                         style={{ objectFit: 'cover' }}
-                                        src={BE_URL + '/' + data.locate_photo}
+                                        src={
+                                          BE_URL +
+                                          '/tripPost/' +
+                                          data.locate_photo
+                                        }
                                       />
                                     </PhotoView>
                                   </div>
                                 </PhotoProvider>
                               </>
                             ) : (
-                              ''
+                              <img alt="" src={defaultPhoto}></img>
                             )}
                           </div>
                         </div>

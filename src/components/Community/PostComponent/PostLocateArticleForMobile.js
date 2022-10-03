@@ -39,17 +39,13 @@ export default function PostLocateArticleForMobile({ post }) {
       {post.length === 0 ? (
         '沒有資料'
       ) : (
-        <ul className="article_section">
+        <div className="article_section">
           {post.map((data, index) => {
             return (
               <>
                 <div className="my-2 post_dayCount">Day {data[0].days}</div>
                 {data.map((data, i) => {
-                  {
-                    /* console.log('data', data);
-                  console.log('locate_photo', data.locate_photo);
-                  console.log(BE_URL + '/' + data.locate_photo); */
-                  }
+
                   return (
                     <>
                       <li
@@ -85,12 +81,12 @@ export default function PostLocateArticleForMobile({ post }) {
                                       ew
                                       key={index}
                                       style={{ objectFit: 'cover' }}
-                                      src={BE_URL + '/' + data.locate_photo}
+                                      src={BE_URL + '/tripPost/' + data.locate_photo}
                                     >
                                       <img
                                         alt=""
                                         style={{ objectFit: 'cover' }}
-                                        src={BE_URL + '/' + data.locate_photo}
+                                        src={BE_URL + '/tripPost/' + data.locate_photo}
                                       />
                                     </PhotoView>
                                   </div>
@@ -109,7 +105,7 @@ export default function PostLocateArticleForMobile({ post }) {
               </>
             );
           })}
-        </ul>
+        </div>
       )}
     </>
   );

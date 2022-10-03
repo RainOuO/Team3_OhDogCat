@@ -11,10 +11,10 @@ const Travel_ticketNavbar = ({ travelTicket }) => {
         return (
           <div
             key={data.id}
-            className="Travel_ticketNavbar_main_card row card border-primary "
+            className="Travel_ticketNavbar_main_card row card border-primary mt-2 "
           >
             <div className="row g-1">
-              <div className="col-md-3 me-3">
+              <div className="col-3">
                 {data.main_photo === '' ? (
                   <img
                     src="https://picsum.photos/300/300?random31"
@@ -35,11 +35,11 @@ const Travel_ticketNavbar = ({ travelTicket }) => {
                   />
                 )}
               </div>
-              <div className="col-md-8">
+              <div className="col mt-3">
                 <div className="card-body">
-                  <div className=" ">
+                  <div className=" Travel_ticketNavbar_card_titleDiv">
                     <h5 className="Travel_ticketNavbar_card-title">
-                      {data.name}
+                      {data.intro}
                     </h5>
                   </div>
                   <div className="Travel_ticketNavbar_cardText">
@@ -48,11 +48,11 @@ const Travel_ticketNavbar = ({ travelTicket }) => {
                     </p>
                   </div>
                   <div className="d-flex bd-highlight ">
-                    <div className="Travel_ticketNavbar_storeIconn p-2 bd-highlight me-2">
+                    <div className="Travel_ticketNavbar_storeIconn bd-highlight">
                       <IoStorefrontOutline />
                     </div>
                     <p
-                      className="p-2 bd-highlight
+                      className="bd-highlight
               Travel_ticketNavbar_card_placeName_text "
                     >
                       {data.name}

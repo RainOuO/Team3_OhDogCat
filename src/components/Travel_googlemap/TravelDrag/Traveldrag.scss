@@ -1,39 +1,49 @@
 $maincolor: #ffc715;
 $supcolor: #feefc3;
 $supbackcolor: #e7e7e9;
-.traveldrage_change {
-  width: 730px;
-  height: 590px;
-  // background: #eee;
-  overflow: auto;
-}
-.travel_drag_main_card {
-  .travelDrag_container {
-    // margin-left: 50px;
+
+$sup_color: #eeb569;
+$icon_color: #ef7a70;
+$font-size: 1.2rem;
+$font-weight: 700;
+
+.boxsizing {
+  width: 40%;
+
+  .traveldrage_change {
     width: 730px;
     height: 590px;
-    background: #eee;
     overflow: auto;
+    position: relative;
+    // left: 10px;
   }
-  // position: absolute;
-  // top: -210px;
+}
+
+.travelDrag_container {
   position: relative;
-  left: 10px;
-  opacity: 0.8;
   z-index: 1;
-  width: 685px;
-  // max-width: 960px;
-  // --bs-card-spacer-y: 0rem !important;
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 642px;
+  transition: 0.3s ease-in;
+  animation: wrapper-gradient 0.4s linear;
+  margin-bottom: 1rem;
+
+  .travel_drag_main_card {
+    transition: 0.3s ease-in;
+    animation: wrapper-gradient 0.4s linear;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    left: -15px;
+    border: 2px solid;
+    border-radius: 8px;
   }
-  transition: 0.5s ease-in;
-  animation: wrapper-gradient 0.6s linear;
+
   @keyframes wrapper-gradient {
     0% {
       transform: translateY(-100%);
     }
+
     100% {
       transform: translateY(0);
     }
@@ -42,264 +52,300 @@ $supbackcolor: #e7e7e9;
   .Travel_Drag_card_img {
     width: 100%;
     height: 120px;
-    margin-left: -1.6px;
     margin-top: -6.5px;
-    // margin-bottom: -5.5px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
   }
+
   .Travel_Drag_card-title {
     font-weight: 500;
   }
+
+  .card-body {
+    width: 500px;
+  }
+
   .Travel_Drag_cardText {
-    // TODO: 記得改寬度會報版
-    width: 510px;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+
+    .Travel_DragNavbar_text {
+      font-size: 1.3rem;
+      font-weight: 700;
+      // margin-left: 20px;
+      display: -webkit-box;
+      /*值必須為-webkit-box或者-webkit-inline-box*/
+      -webkit-box-orient: vertical;
+      /*值必須為vertical*/
+      -webkit-line-clamp: 2;
+      /*值為數字，表示一共顯示幾行*/
+      overflow: hidden;
+    }
+
     .travel_Dragmapicon {
-      height: 20px;
+      height: 2rem;
+      line-height: 3rem;
       width: 20px;
       position: relative;
       top: 5px;
     }
-    .Travel_DragNavbar_text {
-      font-size: 24px;
-      font-weight: 700;
-      margin-left: 20px;
-      display: -webkit-box; /*值必須為-webkit-box或者-webkit-inline-box*/
-      -webkit-box-orient: vertical; /*值必須為vertical*/
-      -webkit-line-clamp: 2; /*值為數字，表示一共顯示幾行*/
-      overflow: hidden;
-    }
   }
 
-  .Travel_Drag_card_placeName_text {
-    display: inline-block;
-    color: #2da9d7;
-    background-color: #d5eeee;
-    border-radius: 8px;
-    padding: 2px 10px;
-  }
-
-  .Travel_Drag_trashIconn {
-    position: relative;
-    top: 1px;
-    left: 208px;
-    svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      color: #ef7a70;
-    }
-  }
-
-  .Travel_Drag_cardNT {
-    cursor: pointer;
-    position: relative;
-    // top: 3px;
-    left: 40px;
-    color: #ef7a70;
-
-    font-size: 20px;
+  .travel_Dragmaptitle {
+    font-size: 1.3rem;
+    font-weight: 400;
   }
 }
 
+.Travel_Drag_card_placeName_text {
+  display: inline-block;
+  color: #2da9d7;
+  background-color: #d5eeee;
+  border-radius: 8px;
+  padding: 2px 10px;
+}
+
+.Travel_Drag_trashIconn {
+  background-color: $maincolor;
+  border-radius: 8px;
+  width: 80px;
+  height: 2.5rem;
+  color: black;
+  cursor: pointer;
+  align-items: center;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: white;
+  }
+}
+
+.Travel_Drag_cardNT {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  height: 26px;
+  font-weight: 700;
+}
+
 .travleDrag_body {
-  padding-top: 30px;
+  // padding-top: 30px;
+  width: 40%;
+
   .travleDrag_menu {
-    margin-left: 40px;
+    // margin-left: 40px;
     height: 893px;
-    width: 755px;
-    // border: #aaa 1px solid;
+    width: 100%;
 
     .travleDrag_header_top {
-      margin-left: 24px;
-      height: 120px;
-      // align-items: center;  TODO:看 編輯按鈕要在中間還上面
+      height: 100px;
       justify-content: space-between;
+      align-items: center;
       min-height: 48px;
       padding: 0 16px;
       color: #000;
       background-color: $supcolor;
-      margin-bottom: 50px;
-      border-radius: 6px;
-      position: relative;
-      border: 1px solid transparent;
-
-      &:hover {
-        opacity: 0.9;
-        border: 1px solid #d9d9d9;
-        // transform: scale(1.1);
-      }
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
     }
+
     .travleDrag_header_top_left {
       .travleDrag_header_back {
-        margin-top: 3px;
-        height: 25px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100%;
+        display: inline-block;
         cursor: pointer;
+
         .travleDrag_header_backIcon {
-        }
-        svg {
-          color: #000;
-          width: 45px;
-          height: 45px;
+          svg {
+            color: #747474;
+            width: 30px;
+            height: 30px;
+          }
         }
       }
-      .travelDrage_input_title {
-        border-width: 0px;
-        background-color: $supcolor;
-        border-bottom: #ccc 2px solid;
-        position: relative;
-        left: 50px;
-        bottom: 10px;
-        font-size: 30px;
-        width: calc(100% - 45px);
-        height: 34px;
-        padding-bottom: 10px;
-        font-weight: 400;
-        word-wrap: break-word;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        line-height: 1;
-        // padding-left: 50px;
-      }
+
       input:focus {
         outline: none;
       }
+
       .travleDrag_header_tittle {
-        font-size: 34px;
-        // width: calc(100% - 2px);
-        width: calc(400px - 10px);
-        height: 34px;
-        font-weight: 700;
-        word-wrap: break-word;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        line-height: 1;
-        padding-left: 50px;
-      }
-      .travleDrag_header_date {
-        padding-left: 55px;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.5;
+        font-weight: 600;
       }
     }
-    .travleDrag_header_edit {
-      margin-top: 10px;
-      border-radius: 19px;
-      background-color: white;
-      align-items: center;
-      color: #000;
-      font-size: 14px;
-      cursor: pointer;
-      padding: 6px 8px;
-      height: 32px;
-      &:hover {
-        color: #222;
-        border-radius: 19px;
-        box-shadow: 0 2px 4px 0rgba (0, 0, 0, 0.5);
-        background-color: #e7e7e9;
-      }
+  }
+
+  .travleDrag_header_edit {
+    border-radius: 8px;
+    background-color: white;
+    align-items: center;
+    color: #ef7a70;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 6px 9px;
+
+    &:hover {
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px 0rgba (0, 0, 0, 0.5);
+      background-color: $icon_color;
+
       .travleDrag_header_icon {
         display: inline-block;
-        height: 20px;
-        width: 20px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-image: url('../../../images/Traveldragbrush.svg');
+        height: 25px;
+        width: 25px;
+        color: $icon_color;
+      }
+
+      .travleDrag_header_icon {
+        color: white;
       }
     }
-    .travleDrag_header_upImage {
-      position: relative;
+  }
 
-      top: 65px;
-      left: 140px;
-    }
-    .travleDrag_header_upicon {
-      cursor: pointer;
-    }
-    .travleDrag_day_container {
-      margin-left: 24px;
-      width: 730px;
-      height: 80px;
-      border: $supbackcolor 1px solid;
-      // margin-bottom: 20px;
+  .travleDrag_header_upImage {
+    position: relative;
+    // top: 10px;
+    left: 80px;
+  }
+
+  .travleDrag_header_upicon {
+    cursor: pointer;
+  }
+
+  .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: #ffc715;
+  }
+
+  .travleDrag_day_container {
+    width: 100%;
+    height: 65px;
+    border: $supbackcolor 2px solid;
+    border-radius: 8px;
+    margin-bottom: -10px;
+
+    .MuiTabs-root {
       border-radius: 8px;
-      margin-bottom: -10px;
-      .travelDrage_Tab {
-        margin: 10px 10px;
-        font-size: 20px;
-        // width: 280px;
+    }
+
+    .travelDrage_Tab {
+      margin: 5px;
+      font-size: 20px;
+
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   width: 2px;
+      //   height: 50%;
+      //   top: 50%;
+      //   transform: translateY(-50%);
+      //   right: -1rem;
+      //   background: #747474;
+      // }
+    }
+
+    .css-1aquho2-MuiTabs-indicator {
+      background-color: $maincolor;
+      border: $maincolor 1.5px solid;
+    }
+
+    .MuiButtonBase-root {
+      border-radius: 8px;
+
+      // &:first-child {
+      //   display: none;
+      // }
+    }
+
+    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root .Mui-selected-selected {
+      color: $maincolor;
+    }
+  }
+
+  .travleDrag_Main {
+    border-radius: 8px;
+    width: 100%;
+    // border: $supbackcolor 1px solid;
+    margin-left: -25px;
+
+    .travelDrag_Options {
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
       }
-      .css-1aquho2-MuiTabs-indicator {
-        background-color: $maincolor;
-      }
-      .MuiButtonBase-root {
-        color: #000;
+      // ? 雨信特效時間記得調短
+      transition: 0.3s ease-in;
+      animation: wrapper-gradient 0.3s linear;
+      @keyframes wrapper-gradient {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
       }
     }
 
-    .travleDrag_Main {
-      border-radius: 8px;
-      width: 730px;
-      border: $supbackcolor 1px solid;
-      .travelDrag_Options {
-      }
-      .travelDrag_tittle {
-        font-weight: 700;
-        font-size: 1.3rem;
-        align-items: center;
-        &::before {
-          content: '';
-          width: 35px;
-          height: 25px;
-          background: url('../../../images/TravelDragbluecar.png') no-repeat
-            center / contain;
-          //TODO: 用SVG圖繪掛掉 只能用PNG
-          bottom: -35px;
-          left: 85px;
-          position: absolute;
-          display: inline-block;
+    .travelDrag_tittle {
+      font-size: 1.3rem;
+      align-items: center;
+      display: flex;
+      // position: relative;
+      // bottom: 10px;
+      .travel_dragcard_photo {
+        padding-top: 9px;
+        padding-left: 3px;
+        width: 156px;
+        .Travel_Drag_card_exit {
+          width: 100%;
+          height: 123px;
+          margin-top: -6.5px;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
         }
       }
-
-      .travelDrag_container {
-        // margin-left: 50px;
-        width: 730px;
-        height: 590px;
-        background: #eee;
-        overflow: auto;
-
-        .travelDrag_container::-webkit-scrollbar {
-          width: 1em;
-        }
-        .travelDrag_container::-webkit-scrollbar-button {
-          background: #fff;
-        }
-        .travelDrag_container::-webkit-scrollbar-track-piece {
-          background: #aaa;
-        }
-
-        .travelDrag_container::-webkit-scrollbar-corner {
-          border: 1px solid red;
-        }
-        .travelDrag_container::-webkit-scrollbar-track {
-          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .travelDrag_container::-webkit-scrollbar-thumb {
-          background-color: white;
-          border: 1px solid slategrey;
-        }
+    }
+    .edit_save_btn {
+      width: 200px;
+      background-color: #feefc3;
+      color: #000;
+      font-weight: 900;
+      font-size: 18px;
+      &:hover {
+        background-color: #ef7a70;
+        color: #fff;
       }
+    }
+
+    // 不知道是啥的 travelDrag_container
+    .travelDrag_container {
+      // height: 590px;
+
+      // .travelDrag_container::-webkit-scrollbar {
+      //   width: 1em;
+      // }
+
+      // .travelDrag_container::-webkit-scrollbar-button {
+      //   background: #fff;
+      // }
+
+      // .travelDrag_container::-webkit-scrollbar-track-piece {
+      //   background: #aaa;
+      // }
+
+      // .travelDrag_container::-webkit-scrollbar-corner {
+      //   border: 1px solid red;
+      // }
+
+      // .travelDrag_container::-webkit-scrollbar-track {
+      //   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      // }
+
+      // .travelDrag_container::-webkit-scrollbar-thumb {
+      //   background-color: white;
+      //   border: 1px solid slategrey;
+      // }
     }
   }
 }

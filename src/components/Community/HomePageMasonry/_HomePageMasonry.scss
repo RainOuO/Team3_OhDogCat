@@ -1,0 +1,72 @@
+.WebMasonry {
+  .masonry {
+    width: 100%;
+    // -moz-column-count: 5;
+    // -moz-column-gap: 0;
+    column-count: 5;
+    column-gap: 0;
+    .item {
+      padding: 20px;
+      display: block;
+      border-radius: 15px;
+      // min-width: 100px;
+
+      cursor: pointer;
+      &:hover {
+        background: #feefc3;
+      }
+
+      section {
+        padding: 5px;
+        height: 100%;
+      }
+      img {
+        border-radius: 15px;
+        // object-fit: cover;
+        width: 100%;
+        // height: 80%;
+        height: auto;
+      }
+      div {
+        // background-color: black;
+      }
+    }
+    .allPostTitle {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0 3px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      .allPostMainTitle {
+        font-size: 16px;
+      }
+    }
+    .allPostLocation {
+      color: #ef7a70;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .bottomSection {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .userInfo {
+        display: flex;
+        align-items: center;
+        div {
+          background-color: #ccc;
+          background-size: cover;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

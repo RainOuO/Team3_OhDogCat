@@ -1,0 +1,43 @@
+$fmain_color: #ffc200; // 主色
+$sup_color: #eeb569;
+$font-size: 1.2rem;
+$second_font-size: 26px;
+$rwd_font-size: 22px;
+$font-weight: 700;
+$rwdfont-weight: 500;
+$border-radius: 15px;
+$box-shadow: 2px 4px 8px grey;
+$look_line-height: 53px;
+
+.BG {
+  max-width: 1920px;
+  background: linear-gradient(
+    190deg,
+    #ffffff 0%,
+    #ffffff 40%,
+    #fff7dc 80%,
+    #fff0c0 80%,
+    #fff 29%,
+    #fff 0%
+  );
+
+  .TravelHomePage {
+    // margin: 0 240px;
+    .mainSection{
+  padding: 80px 240px 120px;
+
+
+  .travelGoPlayTitle {
+    font-size: 32px;
+    color: #747474;
+    font-weight: 500;
+    margin: 80px 0;
+  }
+  .TravelEveryOneSwiperTitle {
+    font-size: 32px;
+    color: #747474;
+    font-weight: 500;
+    margin: 50px 0;
+  }
+}}
+}

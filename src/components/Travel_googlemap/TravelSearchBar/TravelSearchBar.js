@@ -23,46 +23,66 @@ import {
 } from '@reach/combobox';
 import { useState } from 'react';
 import { useEffect } from 'react';
-
 const PlacesAutocomplete = ({
   selected,
   setSelected,
   travelTicket,
   getDays,
   gettravelid,
+  setIfDelete,
+  ifDelete,
 }) => {
-  // console.log('這是gettravelid', gettravelid);
-  const { tripdetail, setTripdetail } = useState([]);
-  // console.log('這是第', getDays, '天的行程');
+  // render新增行程後畫面
+  useEffect(() => {
+    async function PosthandleSubmit(e) {
+      try {
+        // let response = await axios.post(`${API_URL}/submit/tripdetail`, {
+        //   mapPhone,
+        //   mapPhoto,
+        //   mapName,
+        //   selected,
+        //   getDays,
+        //   gettravelid,
+        // });
+        // console.log('景點圖片新增成功', response);
+
+        setIfDelete(true);
+        console.log('新增地圖後狀態usEffect', ifDelete);
+      } catch (e) {
+        console.log('地圖景點新增錯誤', e);
+      }
+      // handleSuccess('成功建立此行程!', `/Travel_map?travelid=${gettravelid}`);
+    }
+    PosthandleSubmit();
+  }, []);
   async function handleSubmit(e) {
     e.preventDefault();
-    let response = await axios.post(
-      `${API_URL}/submit/tripdetail`,
-      { mapPhone, mapPhoto, mapName, selected, getDays, gettravelid },
+    try {
+      let response = await axios.post(`${API_URL}/submit/tripdetail`, {
+        mapPhone,
+        mapPhoto,
+        mapName,
+        selected,
+        getDays,
+        gettravelid,
+      });
+      console.log('景點圖片新增成功', response);
+      handleSuccess('成功建立此行程!', `/Travel_map?travelid=${gettravelid}`);
 
-      {}
-    );
-    console.log('景點圖片新增成功', response);
-    handleSuccess('成功建立此行程!', `/Travel_map?travelid=${gettravelid}`);
-
-    // const data = response.data;
-
-    // console.log(response.data);
-    // setTripdetail(data);
+      setIfDelete(true);
+      console.log('新增地圖後狀態false', ifDelete);
+    } catch (e) {
+      console.log('地圖景點新增錯誤', e);
+    }
+    // handleSuccess('成功建立此行程!', `/Travel_map?travelid=${gettravelid}`);
   }
-
-  // console.log('Travel收藏票卷', travelTicket);
   const pictureOnclick = (e) => {
     setStoredetail(1);
-
     setbackicon(0);
-
-    console.log('storedetail Onclick', storedetail);
   };
 
   const iconBackClick = (e) => {
     setbackicon(1);
-    console.log('backicon', backicon);
   };
 
   const [mapPhoto, setmapPhoto] = useState([]);
@@ -80,7 +100,6 @@ const PlacesAutocomplete = ({
     suggestions: { status, data },
     clearSuggestions,
   } = usePlacesAutocomplete();
-  // console.log('this is data', data);
   const handleSelect = async (address) => {
     setValue(address, false);
     clearSuggestions();
@@ -91,7 +110,6 @@ const PlacesAutocomplete = ({
     const results = await getGeocode({ address });
     const { lat, lng } = await getLatLng(results[0]);
     setSelected({ lat, lng });
-    // console.log('results[0]', results[0]);
   };
 
   const submit = (pId) => {
@@ -138,9 +156,6 @@ const PlacesAutocomplete = ({
     <Combobox onSelect={handleSelect} className="travelmap_coboboxBody">
       <div className="travel_input_searchBar_sum  d-flex  ">
         <div className="travel_input_searchBar_sum">
-          <div className="travelmap_input_icondiv ">
-            <img src={mapicon} alt="#/" className="travel_input_mapicon " />
-          </div>
           <ComboboxInput
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -328,7 +343,14 @@ const PlacesAutocomplete = ({
     </Combobox>
   );
 };
-const TravelSearchBar = ({ selected, setSelected, getDays, gettravelid }) => {
+const TravelSearchBar = ({
+  selected,
+  setSelected,
+  getDays,
+  gettravelid,
+  setIfDelete,
+  ifDelete,
+}) => {
   return (
     <>
       <PlacesAutocomplete
@@ -336,6 +358,8 @@ const TravelSearchBar = ({ selected, setSelected, getDays, gettravelid }) => {
         selected={selected}
         getDays={getDays}
         gettravelid={gettravelid}
+        setIfDelete={setIfDelete}
+        ifDelete={ifDelete}
       />
     </>
   );

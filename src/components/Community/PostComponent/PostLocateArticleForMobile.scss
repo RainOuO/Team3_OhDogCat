@@ -22,11 +22,9 @@ $line-color--blue: #d5eeee;
 @media only screen and (max-width: 768px) {
   .postLocateArticleRWD {
     .article_section {
-      max-width: 345px;
+      max-width: 350px;
       width: 100%;
       margin: 0 auto;
-      // padding: 0 15px;
-      // margin: 0 15px;
       .post_dayCount {
         font-weight: 800;
         font-size: 1.3rem;
@@ -61,7 +59,7 @@ $line-color--blue: #d5eeee;
     .locate_photo_single {
       border: 1px solid #eee;
       border-radius: 8px;
-      width: 340px;
+      width: 350px;
       height: 300px;
       overflow: hidden;
       img {

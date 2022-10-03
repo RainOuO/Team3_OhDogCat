@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import { API_URL } from '../../utils/config';
 import { API_URL } from '../../utils/config';
+
 import './PostTrip.scss';
 
 import PostLocateArticleWeb from '../../components/Community/PostComponent/PostLocateArticle';
@@ -8,10 +10,11 @@ import PostLocateArticleRWD from '../../components/Community/PostComponent/PostL
 import PostStateBarTripPost from '../../components/Community/PostComponent/PostStateBarTripPost';
 import CommunityGoogleMaps from '../../components/Community/PostComponent/CommunityGoogleMaps';
 import CommentBar from '../../components/Community/PostComponent/CommentBar';
+import CommentBarRWD from '../../components/Community/PostComponent/CommentBarRWD';
 import RecommandProduct from '../../components/Community/PostComponent/RecommandProduct';
 import TripOutline from '../../components/Community/PostComponent/TripOutline';
 import { useParams, useLocation } from 'react-router-dom';
-import PostMap from '../../components/Community/PostComponent/PostMap';
+// import PostMap from '../../components/Community/PostComponent/PostMap';
 
 function PostTrip() {
   const [postTrip, setPostTrip] = useState([]);
@@ -86,12 +89,14 @@ function PostTrip() {
               </div>
               <TripOutline className="d-block" post={postTrip}></TripOutline>
             </div>
-            <CommunityGoogleMaps></CommunityGoogleMaps>
+            <CommunityGoogleMaps post={postTrip}></CommunityGoogleMaps>
             <div className="recommandProduct">
               <RecommandProduct></RecommandProduct>
             </div>
             <hr></hr>
-            <CommentBar comment={comment}></CommentBar>
+            <div className="commentBar ">
+              <CommentBar comment={comment}></CommentBar>
+            </div>
           </div>
         </div>
       )}

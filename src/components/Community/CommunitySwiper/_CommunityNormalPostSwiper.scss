@@ -1,0 +1,106 @@
+.CommunitySwiperLeft {
+  margin-bottom: 30px;
+
+  .communitySwiper_Left {
+    // height: 100%;
+  }
+
+  .communitySwiper_card {
+    background-color: #fff;
+    width: 290px;
+    height: 250px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 15px;
+    overflow: hidden;
+    // box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+
+    .obj-fit {
+      img {
+        width: 350px;
+        height: 180px;
+        object-fit: cover;
+      }
+    }
+    &_title {
+      h5 {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        margin: 0;
+        .faPaw {
+          color: #ffc715;
+          margin-right: 5px;
+        }
+      }
+    }
+    &_author {
+      font-size: 16px;
+    }
+    &_like {
+      font-size: 16px;
+    }
+    .communitySwiper_card_heart {
+      svg {
+        font-size: 20px;
+        color: #ef7a70;
+      }
+    }
+  }
+  // .swiper-wrapper {
+  //   -webkit-transition-timing-function: linear !important;
+  //   -o-transition-timing-function: linear !important;
+  //   transition-timing-function: linear !important;
+  // }
+}
+
+.CommunitySwiperRight {
+  margin-bottom: 60px;
+
+  .communitySwiper_Right {
+    height: 100%;
+  }
+
+  .communitySwiper_card {
+    background-color: #fff;
+    width: 390px;
+    height: calc(100% - 30px);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.08);
+    .obj-fit {
+      .img {
+        width: 390px;
+        height: 270px;
+        border-radius: 15px;
+      }
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+    &_title {
+      h5 {
+        display: -webkit-box;
+        font-size: 16px;
+        line-height: 1.35;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+      }
+    }
+    &_author {
+      font-size: 14px;
+    }
+    &_like {
+      font-size: 14px;
+    }
+  }
+  .swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    -o-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
+}

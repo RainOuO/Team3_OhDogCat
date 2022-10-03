@@ -27,7 +27,7 @@ export default function CommunityListCard({ postData, search }) {
               <div className="row g-0">
                 <div className="col-md-4 comList_main_card_img--box">
                   <img
-                    src={BE_URL + data.post_main_photo}
+                    src={BE_URL + '/post/' + data.post_main_photo}
                     className="comList_main_card_img"
                     alt="..."
                   />

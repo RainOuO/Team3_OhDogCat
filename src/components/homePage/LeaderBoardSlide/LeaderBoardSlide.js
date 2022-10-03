@@ -7,7 +7,7 @@ import './_leaderBoardSlide.scss';
 const BASE_URL = process.env.REACT_APP_BASE_API_URL;
 const Data = [
   {
-    id: 513,
+    id: 531,
     rank: 1,
     category: '景點',
     title: '【2022合歡山杜鵑花季】 \u000A 南投｜合歡山北峰& 武嶺 1日遊',

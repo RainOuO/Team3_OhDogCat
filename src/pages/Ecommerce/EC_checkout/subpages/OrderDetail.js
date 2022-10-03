@@ -59,6 +59,7 @@ function OrderDetail(props) {
       setOrderBuying({
         user_id: cartProductData.user_id,
         product_id: cartProductData.product_id,
+        product_name: cartProductData.product_name,
         product_quantity: cartProductData.quantity,
         product_price: cartProductData.price,
         order_no: packageIdGenerater(cartProductData.user_id),

@@ -1,28 +1,40 @@
 .CommunitySwiperLeft {
-  margin-bottom: 30px;
+
+  // margin-bottom: 30px;
+  margin: 0 30px;
 
   .communitySwiper_Left {
     // height: 100%;
   }
 
+
   .communitySwiper_card {
     background-color: #fff;
-    width: 310px;
-    height: 320px;
-    border: 1px solid rgb(224, 224, 224);
+    width: 240px;
+    height: 230px;
+    // border: 1px solid rgb(224, 224, 224);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.08);
+    // box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+
     .obj-fit {
       img {
-        width: 390px;
-        height: 230px;
+        width: 330px;
+        height: 160px;
         object-fit: cover;
       }
     }
     &_title {
       h5 {
+        display: flex;
+        align-items: center;
         font-size: 18px;
+        margin: 0;
+        .faPaw{
+          color: #FFC715;
+          margin-right: 5px;
+        }
       }
     }
     &_author {

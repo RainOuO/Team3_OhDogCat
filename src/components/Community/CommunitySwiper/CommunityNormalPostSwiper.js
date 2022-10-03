@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { API_URL } from '../../../utils/config';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
+import { TiLocation } from 'react-icons/ti';
 import { BiLike } from 'react-icons/bi';
+import { FaPaw } from 'react-icons/fa';
+
 import { IoHeartOutline } from 'react-icons/io5';
 
-import './_communitySwiper.scss';
+import './_CommunityNormalPostSwiper.scss';
 
 import dog1 from '../../../images/Community_HomePage/petKOL/dog1.jpeg';
 import dog2 from '../../../images/Community_HomePage/petKOL/dog2.jpeg';
@@ -28,7 +33,7 @@ import cat8 from '../../../images/Community_HomePage/petKOL/cat8.jpeg';
 import cat9 from '../../../images/Community_HomePage/petKOL/cat9.jpeg';
 import cat10 from '../../../images/Community_HomePage/petKOL/cat10.jpeg';
 
-export default function communityHomePageCard(props) {
+export default function CommunityNormalPostSwiper(props) {
   const { comHomePageCard } = props;
   // console.log('props', props);
   const petKOL = [
@@ -153,7 +158,21 @@ export default function communityHomePageCard(props) {
       like: '739',
     },
   ];
-  console.log(petKOL[0].img);
+
+  const [allNormalPost, setAllNormalPost] = useState([]);
+
+  const BASE_URL = process.env.REACT_APP_BASE_API_URL;
+
+  useEffect(() => {
+    // 抓社群所有資料
+    const fetchNormalPostData = async () => {
+      const result = await axios.get(`${API_URL}/communityHomePage/normalPost`);
+      // setAllPost(result.data)
+      console.log('-----------normalPost-----------', result.data);
+      setAllNormalPost(result.data);
+    };
+    fetchNormalPostData();
+  }, []);
 
   return (
     <>
@@ -167,39 +186,32 @@ export default function communityHomePageCard(props) {
           modules={[Autoplay]}
           autoplay={{
             delay: 2500,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
+            reverseDirection: false,
           }}
           onSlideChange={(e) => {}}
           onSwiper={(swiper) => {}}
         >
-          {petKOL.map((data, index) => {
+          {allNormalPost.map((v, i) => {
             return (
-              <SwiperSlide key={'comHomePageCard' + index} className="h-100">
-                <Link
-                  to="/"
-                  className="communitySwiper_card d-flex flex-column"
-                >
-                  <div className="obj-fit">
-                    <img src={data.img} alt="123" />
+              <SwiperSlide key={v.id}>
+                <div className="">
+                  <div className="">
+                    <img src={v.img} alt="" />
                   </div>
-                  <div className="d-flex flex-fill p-3">
+                  <div className="d-flex flex-fill p-3 align-items-center">
                     <div className="communitySwiper_card_title flex-fill">
-                      {/* TODO:狗掌icon */}
-                      <h5>{data.name}</h5>
+                      <h5>
+                        <FaPaw className="faPaw" />
+                        {v.name}
+                      </h5>
                     </div>
-                    <div className="communitySwiper_card_infoArea d-flex align-items-end">
-                      <div className="communitySwiper_card_info d-flex align-items-end">
-                        <div className="communitySwiper_card_like">
-                          {data.like}
-                          <BiLike />
-                        </div>
-                      </div>
-                      {/* <div className="communitySwiper_card_heart">
-                        <IoHeartOutline />
-                      </div> */}
+                    <div className="communitySwiper_card_like d-flex align-items-center">
+                      {v.likes}
+                      <BiLike />
                     </div>
                   </div>
-                </Link>
+                </div>
               </SwiperSlide>
             );
           })}

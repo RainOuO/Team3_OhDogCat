@@ -1,18 +1,24 @@
 $second_color: #eeb569; // 主色
+
 .travelmap_body {
-  max-width: 1280px;
-  margin: 0px 10px;
+  max-width: 1660px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 
   .travelmap_mainMap {
     position: relative;
-    margin-left: 50px;
+    // margin-left: 50px;
+    width: 60%;
   }
 
   .travelmap_container {
-    margin-top: 5px;
-    width: 960px;
+    margin-top: 15px;
+    width: 98%;
     height: 812px;
+    border-radius: 8px;
   }
+
   .travelmap_InfoWindow_Countain {
     display: flex;
 
@@ -21,6 +27,7 @@ $second_color: #eeb569; // 主色
 
     .travelmap_InfoWindow_wrap {
       background-color: $second_color;
+
       .travelmap_InfoWindow_photo {
         background-color: $second_color;
         border-radius: 50%;
@@ -29,6 +36,7 @@ $second_color: #eeb569; // 主色
         margin-bottom: 10px;
       }
     }
+
     .travelmap_InfoWindow_aside {
       background-color: $second_color;
       flex-direction: column;
@@ -72,15 +80,18 @@ $second_color: #eeb569; // 主色
     border-radius: 8px;
     box-shadow: 0 2px 7px 1px rgba(0, 0, 0, 0.3);
   }
+
   .gm-style-iw-d {
     // height: 30px !important;
     min-width: 0px !important;
     overflow: auto !important;
   }
+
   .gm-style .gm-style-iw-tc::after {
-    background-color: $second_color !important;
+    background-color: $second_color  !important;
   }
+
   .title .full-width {
-    background-color: $second_color !important;
+    background-color: $second_color  !important;
   }
 }

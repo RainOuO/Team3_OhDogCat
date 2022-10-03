@@ -12,11 +12,13 @@ import { API_URL } from '../../../utils/config';
 import { handleSuccess } from '../../../utils/handler/card/handleStatusCard';
 import { useUserInfo } from '../../../hooks/useUserInfo';
 
-export default function PostStateBar({ post, postID }) {
+export default function PostStateBarTripPost({ post, postID }) {
   console.log('post', post);
   console.log('此貼文ＩＤ', postID);
+  console.log(post[0][0].tags);
   // 資料按讚數 學儒調整中
   const [likes, setLikes] = useState(post[0][0].likes);
+  console.log(post[0][0].likes);
   // 資料按讚數
   const { user, setUser } = useUserInfo();
   // console.log('user', user.data.id);
@@ -42,10 +44,9 @@ export default function PostStateBar({ post, postID }) {
 
   console.log('poststatebar', post);
 
-  // 按讚按鈕 學儒調整中
+  // 按讚按鈕
   const LikeHandle = async (e) => {
     e.preventDefault();
-
     if (!likesState) {
       setLikes(likes + 1);
       console.log('現在按讚狀態', likesState);
@@ -79,6 +80,7 @@ export default function PostStateBar({ post, postID }) {
     }
   };
   // 學儒調整中
+  console.log('post', post);
   const time = post[0][0].create_time.split(' ');
   const tags = post[0][0].tags.split(/[#,＃]/).filter((item) => item);
 
@@ -107,7 +109,7 @@ export default function PostStateBar({ post, postID }) {
             src={
               post[0][0].post_main_photo === ''
                 ? coverPhoto
-                : BE_URL + '/' + post[0][0].post_main_photo
+                : BE_URL + '/post/' + post[0][0].post_main_photo
             }
           ></img>
         </div>

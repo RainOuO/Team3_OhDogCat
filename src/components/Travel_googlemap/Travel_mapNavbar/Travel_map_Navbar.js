@@ -49,6 +49,8 @@ function a11yProps(index) {
 }
 
 const Travel_map_Navbar = ({
+  setIfDelete,
+  ifDelete,
   selected,
   setSelected,
   travelTicket,
@@ -60,7 +62,7 @@ const Travel_map_Navbar = ({
     setValue(newValue);
   };
   return (
-    <Box sx={{ width: '100%' }} className="travel_map_Container">
+    <Box sx={{ width: '98%' }} className="travel_map_Container">
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }} className="">
         <Tabs
           className="travel_map_Tab "
@@ -70,9 +72,9 @@ const Travel_map_Navbar = ({
         >
           <Tab
             label={
-              <div>
+              <div className="travel_map_nav">
                 <TbTicket className="travelmap_navBaricon " />
-                我的票卷
+                收藏的票券
               </div>
             }
             {...a11yProps(0)}
@@ -82,7 +84,7 @@ const Travel_map_Navbar = ({
             label={
               <div>
                 <IoHeartOutline className="travelmap_navBaricon " />
-                收藏的票卷
+                我的票券
               </div>
             }
             {...a11yProps(1)}
@@ -102,7 +104,7 @@ const Travel_map_Navbar = ({
       </Box>
       <TabPanel value={value} index={0}>
         <div className="TravelTicketNavbarBody">
-          <TravelTicketNavbar travelTicket={travelTicket} />
+          {/* <TravelTicketNavbar travelTicket={travelTicket} /> */}
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -117,6 +119,8 @@ const Travel_map_Navbar = ({
             selected={selected}
             getDays={getDays}
             gettravelid={gettravelid}
+            setIfDelete={setIfDelete} //重新render畫面用
+            ifDelete={ifDelete} //重新render畫面用
           />
         </div>
       </TabPanel>

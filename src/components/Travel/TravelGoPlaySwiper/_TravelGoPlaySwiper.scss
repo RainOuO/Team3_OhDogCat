@@ -1,0 +1,45 @@
+$fmain_color: #ffc200; // 主色
+$sup_color: #eeb569;
+$font-size: 1.2rem;
+$second_font-size: 26px;
+$rwd_font-size: 22px;
+$font-weight: 700;
+$rwdfont-weight: 500;
+$border-radius: 15px;
+$box-shadow: 2px 4px 8px grey;
+$look_line-height: 53px;
+/////////////////// 自訂顏色 大小
+
+.TravelGoPlaySwiper {
+  .travel_goplay {
+    // max-width: 1425px;
+    .goTripItem {
+      width: 200px;
+      height: 160px;
+      position: relative;
+
+      .goTripImg {
+        img {
+          border-radius: 15px;
+          width: 200px;
+          height: 130px;
+          object-fit: cover;
+        }
+      }
+      .goTripName {
+        position: relative;
+        bottom: 33px;
+        left: 15px;
+        z-index: 10;
+
+        p {
+          // z-index: 2;
+          color: #fff;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 375px) {
+  
+  }
+}

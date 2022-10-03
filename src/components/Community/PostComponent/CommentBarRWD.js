@@ -8,7 +8,7 @@ import moment from 'moment/moment';
 
 import './CommentBar.scss';
 
-function CommentBar() {
+function CommentBarRWD() {
   // 網址postID 顯示該筆資料
   const location = useLocation();
   const urlSearchParams = new URLSearchParams(location.search);
@@ -104,9 +104,7 @@ function CommentBar() {
                   <div className="user_comment_text">{data.comment}</div>
                 </div>
               </div>
-              <div className="user_comment_datetime d-flex align-self-end">
-                <p className="d-block">留言時間： {data.create_time}</p>
-              </div>
+              <div className="user_comment_datetime d-flex align-self-end"></div>
             </li>
           );
         })}
@@ -145,4 +143,4 @@ function CommentBar() {
   );
 }
 
-export default CommentBar;
+export default CommentBarRWD;

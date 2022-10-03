@@ -175,6 +175,7 @@ $font-weight: 1000;
       left: 12px;
       padding: 8px;
       margin: 0;
+
       &:active,
       &:focus {
         border: 0;
@@ -228,6 +229,7 @@ $font-weight: 1000;
         right: 0rem;
         height: 40%;
       }
+
       &:hover::before,
       &.active::before {
         width: calc(100% - 40px);
@@ -269,6 +271,7 @@ $font-weight: 1000;
       .navbar-brand {
         margin: 0;
         padding: 0;
+
         img {
           height: 64px;
         }
@@ -289,15 +292,27 @@ $font-weight: 1000;
       }
 
       // = mobile menu btn
+
       .header_rwd_menubtn {
+        .navbar-toggler-icon {
+          svg {
+            color: $fmain_color !important;
+          }
+        }
         margin-left: 16px;
         border: 0;
         padding: 0;
+        svg {
+          color: $fmain_color !important;
+        }
         &:focus,
         &:active {
           border: 0;
           box-shadow: none;
         }
+      }
+      svg {
+        color: $fmain_color !important;
       }
     }
   }
@@ -336,6 +351,7 @@ $font-weight: 1000;
           svg {
             width: 22px;
           }
+
           &.header_Icon_cart svg {
             width: 24px;
           }
@@ -346,6 +362,7 @@ $font-weight: 1000;
 
   .header_rwd_menu_Offcanvas {
     width: 100% !important;
+
     .header_rwd_tittle {
       .header_rwd_menu_imgWrap {
         img {

@@ -13,7 +13,6 @@ function Recommand_product() {
   useEffect(() => {
     const fetchCard = async (index) => {
       const result = await axios.get(`${API_URL}/post/recommendbar`);
-      // console.log(result.data);
       setCard(result.data);
     };
     fetchCard();

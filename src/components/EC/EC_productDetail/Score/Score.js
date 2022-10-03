@@ -54,6 +54,7 @@ const Score = (props) => {
                 </p>
                 <div className="product_comment_userScore ms-2">
                   <Rate
+                    disabled
                     character={<FaPaw />}
                     defaultValue={data.product_comment_score}
                   />

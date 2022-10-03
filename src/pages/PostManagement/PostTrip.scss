@@ -12,8 +12,13 @@ $line-color--blue: #d5eeee;
   .post_bar {
     max-width: 1280px;
   }
-
   .postLocateArticleRWD {
+    display: none;
+  }
+}
+
+.commentBar {
+  .commentBarRWD {
     display: none;
   }
 }
@@ -27,6 +32,7 @@ $line-color--blue: #d5eeee;
       display: block;
     }
   }
+
   // 地圖
   .communitymap_body {
     .communitymap_container {
@@ -45,7 +51,7 @@ $line-color--blue: #d5eeee;
       font-size: 1.4rem;
       display: inline-block;
     }
-    
+
     .post__comment_list_content {
       max-width: 345px;
     }
@@ -75,6 +81,40 @@ $line-color--blue: #d5eeee;
     .user_comment_name {
       font-size: 16px;
       font-weight: 600;
+    }
+
+    .user_comment_datetime {
+      display: none !important;
+    }
+
+    .post_comment_list .post__comment_list_title {
+      font-size: 1.4rem;
+      display: inline-block;
+    }
+
+    .post_comment_list .comment_descript_list {
+      height: 120px;
+      border-radius: 15px;
+      padding: 10px 10px 10px 15px;
+    }
+    .post_comment_list .comment_descript_list .user_comment_photo {
+      width: 75px;
+      height: 75px;
+    }
+
+    .post_comment_list .comment_descript_list .user_comment_name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .post_comment_list .comment_descript_list .user_comment_text {
+      width: 220px;
+      font-size: 14px;
+      margin-top: 5px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
     }
   }
 }

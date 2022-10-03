@@ -1,0 +1,154 @@
+%input {
+  caret-color: #747474;
+  border: 3px solid #e7e7e9;
+  border-radius: 5px;
+  outline-color: #ffc715;
+}
+.CreateTravel {
+  background-image: url(../../../images/home_tour_bg.png);
+  height: 500px;
+  // width: 100vw;
+  position: relative;
+  .BGCircle1 {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background-color: #feefc3;
+    opacity: 0.8;
+    border-radius: 50%;
+    top: 18%;
+    left: 22.5%;
+    z-index: 1;
+  }
+  // .BGCircle2 {
+  //   position: absolute;
+  //   width: 280px;
+  //   height: 280px;
+  //   background-color: #b0eaff;
+  //   opacity: 0.5;
+  //   border-radius: 50%;
+  //   top: 13rem;
+  //   left: 64rem;
+  // }
+  .BGCircle3 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #ff9634b5;
+    opacity: 0.5;
+    border-radius: 50%;
+    top: 25%;
+    left: 80%;
+  }
+  .BGCircle4 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #ff8eb0b6;
+    opacity: 0.5;
+    border-radius: 50%;
+    top: 65%;
+    left: 90%;
+  }
+  .BGCircle5 {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background-color: #72ceef;
+    opacity: 0.6;
+    border-radius: 50%;
+    top: 65%;
+    left: 10%;
+  }
+  .BGCircle6 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #6dffb1b9;
+    opacity: 0.5;
+    border-radius: 50%;
+    top: 15%;
+    left: 20%;
+  }
+
+  .mainSlogan1 {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    font-size: 72px;
+    width: 460px;
+  }
+  .mainSlogan2 {
+    position: absolute;
+    top: 20rem;
+    left: 35rem;
+    font-size: 60px;
+    width: 500px;
+  }
+  .slogan {
+    position: absolute;
+    top: 58%;
+    left: 47%;
+    font-size: 22px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    .FaPaw {
+      margin-right: 5px;
+      color: #ffc715;
+      font-size: 22px;
+      margin-left: 5px;
+    }
+  }
+  .SloganImg {
+    position: absolute;
+    top: 18%;
+    left: 26%;
+    width: 260px;
+    height: auto;
+    // transform: scaleX(-1);
+    z-index: 2;
+  }
+  .FormBody {
+    position: absolute;
+    top: 68%;
+    left: 47%;
+
+    .Title {
+      font-size: 32px;
+      color: #ef7a70;
+      font-weight: 500;
+      margin: 20px 0;
+
+      .InputGroup {
+        margin-right: 20px;
+        width: 100%;
+      }
+    }
+    .submitButton {
+      // margin-left: 0 ;
+      margin: 0 20px !important;
+      border-radius: 8px !important;
+      border: none;
+      background-color: #ef7a70;
+      color: #fff;
+      &:hover {
+        background-color: #ef7a70;
+        color: #fff;
+      }
+    }
+    .submitButton {
+      border-radius: 8px;
+      border: none;
+      background-color: #ffc200;
+      color: white;
+      width: 90px;
+    }
+  }
+}
+@media screen and (max-width:375px) {
+  
+  .disappear {
+    display: none;
+  }
+}

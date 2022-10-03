@@ -20,6 +20,7 @@ import { BE_URL } from '../../utils/config';
 import moment from 'moment';
 import { handleLoginCard } from '../../utils/handler/card/handleInputCard';
 // import { handleInfoComfirm } from '../../utils/handler/card/handleStatusCard';
+import GoogleMaps from '../../pages/Travel_map/Travel_map';
 
 // 驗證登入
 import { useUserInfo } from '../../hooks/useUserInfo';
@@ -141,7 +142,7 @@ function PostTripEdit() {
             setTripPostTitle(result.data[0].post_title);
             setTripPostCover(
               result.data[0].post_main_photo
-                ? BE_URL + '/' + result.data[0].post_main_photo
+                ? BE_URL + '/post/' + result.data[0].post_main_photo
                 : CoverBackground
             );
             setTripPostLocMark(result.data[0].coordinate);
@@ -195,6 +196,8 @@ function PostTripEdit() {
   //預覽 上傳封面照片 我要哭了
   useEffect(() => {
     if (!selectedCoverFile) {
+      setCoverFile({ photo: CoverBackground, postID: postID });
+      //test
       setPreview('');
       return;
     }
@@ -202,7 +205,7 @@ function PostTripEdit() {
       // async function changeCoverHandler(e) {
       let formData = new FormData();
       // setCoverFile({ ...coverFile, photo: e.name.value });
-      console.log('coverFile!', coverFile);
+      // console.log('coverFile!', coverFile);
       console.log('該貼文ＩＤ', postID);
       formData.append('postID', coverFile.postID);
       formData.append('photo', coverFile.photo);

@@ -113,7 +113,7 @@ export default function PostStateBar({ post, postID }) {
                 ? post[0][0].main_photo === 0
                 : post[0].post_main_photo === 0
                 ? coverPhoto
-                : BE_URL + post[0].post_main_photo
+                : BE_URL + '/post/' + post[0].post_main_photo
               // post[0].travel_id === 2
               //   ? post[0][0].main_photo.length === 0
               //   : post[0].post_main_photo.length === 0

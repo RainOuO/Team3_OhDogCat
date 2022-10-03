@@ -47,8 +47,33 @@ const centers = [
     user: '席主席',
   },
 ];
-function Map({ travelTicket, planning, traveltitle, gettravelid }) {
-  const [center, setcenter] = useState({ lat: 23.17565, lng: 120.9738819 });
+function Map({
+  travelTicket,
+  planning,
+  traveltitle,
+  gettravelid,
+  setIfDelete,
+  ifDelete,
+  getlocate,
+}) {
+  // const newlat = planning[0].latitude
+  //   ? planning[0].latitude
+  //   : { lat: 23.17566 };
+  // const lng = planning[0].longitude
+  //   ? planning[0].longitude
+  //   : { lng: 120.9738819 };
+  // console.log('{ lat: 23.17566 }', { lat: 23.17566 });
+  // const [center, setcenter] = useState({
+  //   lat: getlocate[0] ? +getlocate[0].latitude : Number({ lat: 23.17566 }),
+  //   lng: getlocate[0] ? +getlocate[0].longitude : Number({ lng: 120.9738819 }),
+  // });
+  // console.log(
+  //   ' { lat: 23.17566 }===',
+  //   typeof JSON.stringify({ lat: 23.17566 })
+  // );
+  // console.log('planning[0].latitude=======', typeof +planning[0].latitude);
+  // const [center, setcenter] = useState({ lat: 24.8451324, lng: 121.7842168 }); // 預設宜蘭
+  const [center, setcenter] = useState({ lat: 23.17565, lng: 120.9738819 }); // 預設全台
   const [zoom, setzoom] = useState(8);
   const [selected, setSelected] = useState(null);
   const mapRef = useRef(null);
@@ -84,15 +109,19 @@ function Map({ travelTicket, planning, traveltitle, gettravelid }) {
           traveltitle={traveltitle}
           setGetDays={setGetDays}
           gettravelid={gettravelid} //拿到travelid 更改或新增行程用
+          setIfDelete={setIfDelete} //重新render畫面用
+          ifDelete={ifDelete} //重新render畫面用
         />
-        <div className="travelmap_mainMap">
+        <div className="travelmap_mainMap ms-3">
           <div>
             <TravelmapNavbar
               selected={selected}
               setSelected={setSelected}
               travelTicket={travelTicket} //票卷API
-              getDays={getDays} //   //新增目前第幾天行程用
+              getDays={getDays} //   新增目前第幾天行程用
               gettravelid={gettravelid} //拿到travelid 更改或新增行程用
+              setIfDelete={setIfDelete} //重新render畫面用
+              ifDelete={ifDelete} //重新render畫面用
             />
           </div>
           <GoogleMap
@@ -106,17 +135,17 @@ function Map({ travelTicket, planning, traveltitle, gettravelid }) {
           >
             {selected && <Marker position={selected} />}
 
-            {centers.map(({ id, position, name, days, photo, user }) => {
+            {planning.map((data) => {
               return (
                 <Marker
                   draggable={true}
                   animation={'Animation :BOUNCE'}
-                  label={days}
+                  label={`${data.days}`}
                   labelStyle={{ background: '#fff' }}
-                  key={id}
-                  position={position}
+                  position={{ lat: +data.latitude, lng: +data.longitude }}
+                  key={data.id}
                 >
-                  <InfoWindow className="" key={id} position={position}>
+                  {/* <InfoWindow className="" key={id} position={position}>
                     <div className="travelmap_InfoWindow_Countain">
                       <div className="travelmap_InfoWindow_wrap">
                         <img
@@ -130,7 +159,7 @@ function Map({ travelTicket, planning, traveltitle, gettravelid }) {
                         <p className="travelmap_InfoWindow_user">{user}</p>
                       </div>
                     </div>
-                  </InfoWindow>
+                  </InfoWindow> */}
                 </Marker>
               );
             })}

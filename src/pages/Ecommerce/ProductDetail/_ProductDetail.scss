@@ -4,16 +4,9 @@
   margin: 0 auto;
   margin-top: 8rem;
 
-  .headText {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    // font-weight: 700;
-    font-family: helvetica;
-  }
-
-  .productDetail_itemImage {
-    flex: 0 0 auto;
-    width: 41.66666667%;
+  .topRow {
+    display: flex;
+    justify-content: space-evenly;
   }
 
   .productDetail_itemImage {
@@ -25,24 +18,14 @@
     color: green;
   }
 
-  .tags {
-    display: inline-block;
-    color: #2da9d7;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 3px 10px;
-    margin-right: 20px;
-    border-radius: 4px;
-    background-color: #d5eeee;
+  .textGreen {
+    color: green;
+    font-size: 0.8rem;
   }
 
-  // 主要價格區域
-  .ogCost {
-    color: #747474;
-    margin-right: 15px;
-    font-size: 1rem;
-    font-weight: 1000;
-    margin: 0.4rem;
+  .underline {
+    text-decoration: underline;
+    font-size: 0.8rem;
   }
 
   //  右側描述
@@ -104,63 +87,27 @@
       justify-content: space-between;
       align-items: center;
 
-      // 商品內容整個
-      .addSection {
-        justify-content: space-between;
-        align-items: center;
-
-        .addCost {
-          font-size: 12px;
-          color: gray;
-        }
-      }
-
-      .addCartSection {
-        width: 200px;
-        justify-content: space-between;
-      }
-
-      .addSubSection {
-        width: calc(100% - 24px);
-
-        img {
-          border-radius: 8px;
-          width: 50px;
-          height: 50px;
-          object-fit: cover;
-          flex-shrink: 0;
-        }
-
-        &_name {
-          font-size: 16px;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-
-        &_btn {
-          color: #ffc200;
-          font-weight: 700;
-          border: #ffc200 1px solid;
-          background-color: white;
-          border-radius: 5px;
-          padding: 0 0.6rem;
-        }
-      }
-
-      .costSection {
-        // margin-top: 100px;
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: flex-end;
+      .addCost {
+        font-size: 12px;
+        color: gray;
       }
     }
 
-    .imageColumn {
-      flex: 1;
-      min-width: 200px;
+    .addCartSection {
+      width: 200px;
+      justify-content: space-between;
+    }
+
+    .addSubSection {
+      width: calc(100% - 24px);
+
+      img {
+        border-radius: 8px;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
 
       &_name {
         font-size: 16px;
@@ -187,93 +134,127 @@
       flex-direction: row-reverse;
       align-items: flex-end;
     }
+  }
 
-    .imageColumn {
-      flex: 1;
-      min-width: 200px;
-      .specText {
-        font-size: 0.8rem;
-        font-weight: 200;
-      }
-
-      .productContainer_content {
-        height: 170px;
-      }
-
-      .productContainer {
-        padding: 1 2rem;
-      }
-
-      .mainImage {
-        width: 500px;
-        height: 400px;
-        object-fit: cover;
-      }
-    }
-
-    .addButton {
-      color: white;
-      width: 100%;
-      border-radius: 5px;
-      border-style: none;
-      background-color: #ffc200;
-      padding: 5px 0;
-    }
+  .imageColumn {
+    flex: 1;
+    min-width: 200px;
 
     .mainImage {
-      margin: 0 auto;
+      width: 500px;
+      height: 400px;
+      object-fit: cover;
     }
+  }
 
-    .mainImage img {
-      width: 80%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  .addButton {
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #ffc200;
+    padding: 5px 0;
+  }
 
-    .productContainer {
-      padding: 1 2rem;
-    }
+  .mainImage {
+    margin: 0 auto;
+  }
 
-    .cardRow {
-      width: 80%;
-      margin: 10px auto;
-      display: flex;
-      // height: 11vh;
-      justify-content: space-between;
-    }
+  .mainImage img {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .anchor {
-      display: flex;
-      flex-direction: column;
-      position: sticky;
-      top: 100px;
-      margin: 1rem;
-    }
+  .productContainer_content {
+    height: 170px;
+  }
 
-    .anchor_a {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2rem;
-      overflow: hidden;
+  .productContainer {
+    padding: 1 2rem;
+  }
 
-      &::after {
-        content: '';
-        position: absolute;
-        left: -100%;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        transition: 0.2s ease-out;
-        z-index: 9;
-        background: url(../../../images/home_news_nav--hover.png) no-repeat
-          right center / auto 100%;
-      }
+  .cardRow {
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    // height: 11vh;
+    justify-content: space-between;
+  }
+
+  .cardRow img {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.8, 0.7);
+  }
+
+  .bottomRow {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
   .spec {
     display: flex;
     flex-direction: column;
   }
+
+  .anchor {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 100px;
+    margin: 1rem;
+  }
+
+  .anchor_a {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.2s ease-out;
+      z-index: 9;
+      background: url(../../../images/home_news_nav--hover.png) no-repeat right
+        center / auto 100%;
+    }
+
+    &:hover::after,
+    &.active::after {
+      left: 0%;
+    }
+
+    span {
+      font-size: 1.2rem;
+      position: relative;
+      padding: 8px 36px 4px 16px;
+      padding-right: 36px;
+      z-index: 99;
+      background-color: transparent;
+      text-align: left;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        height: 16px;
+        border-right: 1px solid rgb(95, 95, 95);
+        transform: translateY(calc(-50% + 1.5px));
+      }
+
+      .spec {
+        display: flex;
+        flex-direction: column;
+      }
 
       span {
         font-size: 1.2rem;
@@ -339,6 +320,22 @@
 
     .exchangeRWD {
       display: none;
+    }
+
+    .detail_map_btn {
+      height: 30px;
+      width: 100px;
+      color: #ffc200;
+      font-weight: 700;
+      border: #ffc200 1px solid;
+      background-color: white;
+      border-radius: 5px;
+      padding: 0 0.6rem;
+
+      &:hover {
+        background-color: #ffc200;
+        color: white;
+      }
     }
   }
 }

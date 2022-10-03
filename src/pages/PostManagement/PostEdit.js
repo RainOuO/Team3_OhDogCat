@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URL, BE_URL } from '../../utils/config';
 import './PostEdit.scss';
-import CoverBackground from '../../images/post_edit_background_banner.png';
+import CoverBackground from '../../images/社群假圖1280.png';
 import mapPhoto from '../../images/screenshop map_photo.png';
 import { MdLocationOn } from 'react-icons/md';
 import dogIcon from '../../images/travel_dog_paws.svg';
