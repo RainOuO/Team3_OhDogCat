@@ -8,12 +8,12 @@ import TravelEveryOneSwiper from '../../components/Travel/TravelEveryOneSwiper/T
 import CreateTravel from '../../components/Travel/CreateTravel/CreateTravel';
 
 import './_TravelHomePage.scss';
-import { Container } from 'react-bootstrap';
-
+import { useUserInfo } from '../../hooks/useUserInfo';
 const TravelHomePage = () => {
+  const { user, setUser } = useUserInfo;
   const [travelCommunity, setTravelCommunity] = useState([]); // 拿日期 標題
   const [travelUser, setTravelUser] = useState([]); // 拿使用者有幾筆行程
-
+  console.log('travelUsertravelUsertravelUsertravelUsertravelUser', travelUser);
   useEffect(() => {
     const calltitledateApi = async () => {
       try {
@@ -31,6 +31,8 @@ const TravelHomePage = () => {
 
   useEffect(() => {
     const fetchUsertrip = async () => {
+      let userID = user.data.id;
+      console.log('userID', userID);
       try {
         const result = await axios.get(`${API_URL}/travelUserplanning/get`, {
           withCredentials: true,
